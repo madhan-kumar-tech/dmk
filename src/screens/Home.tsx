@@ -62,6 +62,7 @@ const HomeScreen: React.FC = () => {
         onRetry={refetch}
         emptyTitle={`ஏதோ தவறு ஏற்பட்டுள்ளது`}
         emptySubtitle="மீண்டும் முயற்சிக்கவும்"
+        isHeaderShown
       >
         <FlatList<Row>
           data={[]}

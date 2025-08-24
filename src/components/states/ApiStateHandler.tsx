@@ -41,6 +41,7 @@ type Props = {
   emptyTitle?: string;
   emptySubtitle?: string;
   children: React.ReactNode;
+  isHeaderShown?: boolean;
 };
 
 export const ApiStateHandler: React.FC<Props> = ({
@@ -50,6 +51,7 @@ export const ApiStateHandler: React.FC<Props> = ({
   emptyTitle = 'No data',
   emptySubtitle = 'Try adjusting filters or pull to refresh.',
   children,
+  isHeaderShown = false,
 }) => {
   const s = useStyles();
 
@@ -58,6 +60,7 @@ export const ApiStateHandler: React.FC<Props> = ({
     if (norm.isEmpty || isEmpty) {
       return (
         <View style={s.fill}>
+          {isHeaderShown && <AppHeader title="T.N.பாளையம் ஒன்றிய திமுக" />}
           <EmptyState
             title={emptyTitle}
             subtitle={emptySubtitle}
@@ -70,6 +73,7 @@ export const ApiStateHandler: React.FC<Props> = ({
 
     return (
       <View style={s.fill}>
+        {isHeaderShown && <AppHeader title="T.N.பாளையம் ஒன்றிய திமுக" />}
         <ErrorState
           title="Something went wrong"
           message={norm.message || 'Unable to load data. Please try again.'}
@@ -84,6 +88,7 @@ export const ApiStateHandler: React.FC<Props> = ({
   if (isEmpty) {
     return (
       <View style={s.fill}>
+        {isHeaderShown && <AppHeader title="T.N.பாளையம் ஒன்றிய திமுக" />}
         <EmptyState
           title={emptyTitle}
           subtitle={emptySubtitle}
