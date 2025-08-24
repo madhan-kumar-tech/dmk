@@ -20,7 +20,6 @@ type Props = {
   labelFontSize?: number;
   labelDy?: number;
   opacity?: number;
-  bottomShadowMax?: number;
 };
 
 export default function BarChart1({
@@ -33,7 +32,6 @@ export default function BarChart1({
   labelFontSize = 12,
   labelDy = 12,
   opacity = 1,
-  bottomShadowMax = 24,
 }: Props) {
   const VB_W = 113;
   const VB_H = 141;
@@ -69,7 +67,6 @@ export default function BarChart1({
 
   const SOCKET_Y = 95.05;
   const EPS = 1;
-  const RING_INNER = 0.9;
   const CAP_NUDGE = {
     left: -0.3,
     middle: -0.3,
@@ -79,14 +76,14 @@ export default function BarChart1({
   const CAP_Y = {
     left: 14.128,
     middle: 36.765,
-    right: 45.515,
+    right: 50.515,
   };
 
   const labelY = (top: number) =>
     Math.max(10, Math.min(top, SOCKET_Y) - (labelDy ?? 12));
   const clipL = Math.min(topL, SOCKET_Y - EPS);
   const clipM = Math.min(topM, SOCKET_Y - EPS);
-  const clipR = Math.min(topR, SOCKET_Y + RING_INNER + 0.2);
+  const clipR = Math.min(topR, SOCKET_Y - EPS);
 
   const showCapL = vL > 0;
   const showCapM = vM > 0;
@@ -101,11 +98,22 @@ export default function BarChart1({
 
   const CAP_OVERLAP = 5;
 
-  const REF_TOP = SOCKET_Y + 1.5;
-  const REF_OPACITY = 0.22;
+  const heightL = Math.max(0, baseY - topL);
+  const heightM = Math.max(0, baseY - topM);
+  const heightR = Math.max(0, baseY - topR);
 
-  const FLARE_TOP = 8;
-  const FLARE_BOT = 16;
+  const SHADOW_FACTOR = 0.8;
+  const shH_L = heightL * SHADOW_FACTOR;
+  const shH_M = heightM * SHADOW_FACTOR;
+  const shH_R = heightR * SHADOW_FACTOR;
+
+  // If any height is 0, we won’t draw a shadow
+  const showShadowL = showBarL && shH_L > 0;
+  const showShadowM = showBarM && shH_M > 0;
+  const showShadowR = showBarR && shH_R > 0;
+
+  console.log({ showShadowL, showShadowM, showShadowR });
+  const SHADOW_OPACITY = 0.28; // tweak to taste
 
   return (
     <Svg
@@ -116,7 +124,6 @@ export default function BarChart1({
       opacity={opacity}
     >
       <Defs>
-        {}
         <ClipPath id={id('clipLeft')}>
           <Rect
             x={BAR.left.x1}
@@ -141,55 +148,35 @@ export default function BarChart1({
             height={VB_H - clipR}
           />
         </ClipPath>
-        <ClipPath id={id('clipReflLeft')}>
-          <Path
-            d={[
-              `M ${BAR.left.x1 - FLARE_TOP} ${REF_TOP}`,
-              `L ${BAR.left.x2 + FLARE_TOP} ${REF_TOP}`,
-              `L ${BAR.left.x2 + FLARE_BOT} ${
-                REF_TOP + Math.min(bottomShadowMax, bottomShadowMax * vL)
-              }`,
-              `L ${BAR.left.x1 - FLARE_BOT} ${
-                REF_TOP + Math.min(bottomShadowMax, bottomShadowMax * vL)
-              }`,
-              'Z',
-            ].join(' ')}
+
+        {/* ========= NEW: bottom-shadow clips (below socket, limited to 30% height) ========= */}
+        {/* <ClipPath id={id('clipShadowLeft')}>
+          <Rect
+            x={BAR.left.x1}
+            y={SOCKET_Y - shH_L} // ⬅️ was SOCKET_Y
+            width={BAR.left.x2 - BAR.left.x1}
+            height={shH_L}
           />
         </ClipPath>
 
-        <ClipPath id={id('clipReflMid')}>
-          <Path
-            d={[
-              `M ${BAR.middle.x1 - FLARE_TOP} ${REF_TOP}`,
-              `L ${BAR.middle.x2 + FLARE_TOP} ${REF_TOP}`,
-              `L ${BAR.middle.x2 + FLARE_BOT} ${
-                REF_TOP + Math.min(bottomShadowMax, bottomShadowMax * vM)
-              }`,
-              `L ${BAR.middle.x1 - FLARE_BOT} ${
-                REF_TOP + Math.min(bottomShadowMax, bottomShadowMax * vM)
-              }`,
-              'Z',
-            ].join(' ')}
+        <ClipPath id={id('clipShadowMid')}>
+          <Rect
+            x={BAR.middle.x1}
+            y={SOCKET_Y - shH_M} // ⬅️ was SOCKET_Y
+            width={BAR.middle.x2 - BAR.middle.x1}
+            height={shH_M}
           />
         </ClipPath>
 
-        <ClipPath id={id('clipReflRight')}>
-          <Path
-            d={[
-              `M ${BAR.right.x1 - FLARE_TOP} ${REF_TOP}`,
-              `L ${BAR.right.x2 + FLARE_TOP} ${REF_TOP}`,
-              `L ${BAR.right.x2 + FLARE_BOT} ${
-                REF_TOP + Math.min(bottomShadowMax, bottomShadowMax * vR)
-              }`,
-              `L ${BAR.right.x1 - FLARE_BOT} ${
-                REF_TOP + Math.min(bottomShadowMax, bottomShadowMax * vR)
-              }`,
-              'Z',
-            ].join(' ')}
+        <ClipPath id={id('clipShadowRight')}>
+          <Rect
+            x={BAR.right.x1}
+            y={SOCKET_Y - shH_R} // ⬅️ was SOCKET_Y
+            width={BAR.right.x2 - BAR.right.x1}
+            height={shH_R}
           />
-        </ClipPath>
+        </ClipPath> */}
 
-        {}
         <LinearGradient
           id={id('paint0')}
           x1={3.20914}
@@ -280,7 +267,6 @@ export default function BarChart1({
           <Stop offset={1} stopColor="#F48FB1" />
         </LinearGradient>
 
-        {}
         <LinearGradient
           id={id('paint8')}
           x1={68.2061}
@@ -377,7 +363,6 @@ export default function BarChart1({
           <Stop offset={0.9249} stopColor="#6EC6FF" />
         </LinearGradient>
 
-        {}
         <LinearGradient
           id={id('paint22')}
           x1={83.048}
@@ -424,43 +409,19 @@ export default function BarChart1({
         </LinearGradient>
       </Defs>
 
-      {}
-      {}
       <Path
         d="M28.91 99.902h16.555M68.49 99.902h16.555"
         stroke="#9AA4BE"
         strokeWidth={1.94366}
       />
-      {}
       <Path
         d="M22.494 95.05H10.833l-7.652 5.028 6.378 6.536h14.21l6.377-6.536-7.652-5.028zM62.428 95.05H50.766l-7.652 5.028 6.378 6.536h14.21l6.378-6.536-7.652-5.028zM102.362 95.05H90.7l-7.652 5.028 6.378 6.536h14.21l6.378-6.536-7.652-5.028z"
         stroke="#9AA4BE"
         strokeWidth={3.53394}
       />
 
-      {}
-      <G
-        clipPath={`url(#${id('clipReflLeft')})`}
-        opacity={REF_OPACITY}
-        pointerEvents="none"
-      >
-        <Path
-          d="M30.172 53.396l-7.651-5.028h-11.66l-7.652 5.028v80.926l6.377 6.535h14.21l6.377-6.535V53.396z"
-          fill={`url(#${id('paint0')})`}
-        />
-        <Path
-          d="M30.173 53.396l-6.378-4.19v91.651l6.378-6.535V53.396z"
-          fill={`url(#${id('paint1')})`}
-        />
-        <Path
-          d="M3.209 53.396l6.377-4.19v91.651l-6.377-6.535V53.396z"
-          fill={`url(#${id('paint2')})`}
-        />
-      </G>
-
       {showBarL && (
         <G clipPath={`url(#${id('clipLeft')})`}>
-          {}
           <Path
             d="M30.172 19.152l-7.651-5.028H10.86l-7.651 5.028v80.927l6.377 6.535h14.209l6.377-6.535V19.152z"
             fill={`url(#${id('paint12')})`}
@@ -475,7 +436,7 @@ export default function BarChart1({
           />
         </G>
       )}
-      {}
+
       {showCapL && (
         <G
           transform={`translate(0, ${
@@ -490,30 +451,8 @@ export default function BarChart1({
         </G>
       )}
 
-      <G
-        clipPath={`url(#${id('clipReflMid')})`}
-        opacity={REF_OPACITY}
-        pointerEvents="none"
-      >
-        <Path
-          d="M70.108 64.371l-7.651-5.028H50.796l-7.651 5.028v58.289l6.376 6.535h14.21l6.377-6.535V64.371z"
-          fill={`url(#${id('paint4')})`}
-        />
-        <Path
-          d="M70.108 64.371l-6.377-4.19v69.014l6.377-6.535V64.371z"
-          fill={`url(#${id('paint5')})`}
-        />
-        <Path
-          d="M43.145 64.371l6.376-4.19v69.014l-6.377-6.535V64.371z"
-          fill={`url(#${id('paint6')})`}
-        />
-      </G>
-      {}
       {showBarM && (
         <G clipPath={`url(#${id('clipMid')})`}>
-          {}
-
-          {}
           <Path
             d="M70.108 41.79l-7.651-5.028H50.796l-7.651 5.027v58.29l6.376 6.535h14.21l6.377-6.535v-58.29z"
             fill={`url(#${id('paint4')})`}
@@ -528,8 +467,7 @@ export default function BarChart1({
           />
         </G>
       )}
-      {}
-      {}
+
       {showCapM && (
         <G
           transform={`translate(0, ${
@@ -544,29 +482,8 @@ export default function BarChart1({
         </G>
       )}
 
-      {}
-      <G
-        clipPath={`url(#${id('clipReflRight')})`}
-        opacity={REF_OPACITY}
-        pointerEvents="none"
-      >
-        <Path
-          d="M110.011 68.933l-7.651-5.028H90.7l-7.652 5.028v44.539l6.377 6.535h14.209l6.377-6.535V68.933z"
-          fill={`url(#${id('paint8')})`}
-        />
-        <Path
-          d="M110.011 68.933l-6.377-4.19v55.264l6.377-6.535V68.933z"
-          fill={`url(#${id('paint9')})`}
-        />
-        <Path
-          d="M83.048 68.933l6.377-4.19v55.264l-6.377-6.535V68.933z"
-          fill={`url(#${id('paint10')})`}
-        />
-      </G>
-      {}
       {showBarR && (
         <G clipPath={`url(#${id('clipRight')})`}>
-          {}
           <Path
             d="M110.011 55.54l-7.651-5.028H90.7l-7.652 5.028v44.539l6.377 6.535h14.209l6.377-6.535V55.54z"
             fill={`url(#${id('paint22')})`}
@@ -581,7 +498,7 @@ export default function BarChart1({
           />
         </G>
       )}
-      {}
+
       {showCapR && (
         <G
           transform={`translate(0, ${
@@ -596,7 +513,111 @@ export default function BarChart1({
         </G>
       )}
 
-      {}
+      {/* LEFT shadow */}
+      {/* {showShadowL && (
+        <G
+          clipPath={`url(#${id('clipShadowLeft')})`}
+          opacity={SHADOW_OPACITY}
+          transform={`translate(0, ${2 * SOCKET_Y}) scale(1, -1)`}
+          pointerEvents="none"
+        >
+          <Path
+            d="M30.172 19.152l-7.651-5.028H10.86l-7.651 5.028v80.927l6.377 6.535h14.209l6.377-6.535V19.152z"
+            fill={`url(#${id('paint12')})`}
+          />
+          <Path
+            d="M30.172 19.152l-6.377-4.19v91.652l6.377-6.535V19.152z"
+            fill={`url(#${id('paint13')})`}
+          />
+          <Path
+            d="M3.208 19.152l6.378-4.19v91.652l-6.378-6.535V19.152z"
+            fill={`url(#${id('paint14')})`}
+          />
+          {showCapL && (
+            <G
+              transform={`translate(0, ${
+                capTopL - CAP_Y.left + CAP_NUDGE.left - CAP_OVERLAP
+              })`}
+            >
+              <Path
+                d="M22.523 14.128H10.862l-7.651 5.027 6.377 6.535h14.21l6.376-6.535-7.651-5.027z"
+                fill={`url(#${id('paint15')})`}
+              />
+            </G>
+          )}
+        </G>
+      )} */}
+
+      {/* MIDDLE shadow */}
+      {/* {showShadowM && (
+        <G
+          clipPath={`url(#${id('clipShadowMid')})`}
+          opacity={SHADOW_OPACITY}
+          transform={`translate(0, ${2 * SOCKET_Y}) scale(1, -1)`}
+          pointerEvents="none"
+        >
+          <Path
+            d="M70.108 41.79l-7.651-5.028H50.796l-7.651 5.027v58.29l6.376 6.535h14.21l6.377-6.535v-58.29z"
+            fill={`url(#${id('paint4')})`}
+          />
+          <Path
+            d="M70.108 41.79l-6.377-4.19v69.014l6.377-6.535v-58.29z"
+            fill={`url(#${id('paint5')})`}
+          />
+          <Path
+            d="M43.145 41.79l6.376-4.19v69.014l-6.377-6.535v-58.29z"
+            fill={`url(#${id('paint6')})`}
+          />
+          {showCapM && (
+            <G
+              transform={`translate(0, ${
+                capTopM - CAP_Y.middle + CAP_NUDGE.middle - CAP_OVERLAP
+              })`}
+            >
+              <Path
+                d="M62.46 36.765H50.797l-7.651 5.027 6.377 6.535h14.21l6.377-6.535-7.652-5.027z"
+                fill={`url(#${id('paint7')})`}
+              />
+            </G>
+          )}
+        </G>
+      )} */}
+
+      {/* RIGHT shadow */}
+      {/* {showShadowR && (
+        <G
+          clipPath={`url(#${id('clipShadowRight')})`}
+          opacity={SHADOW_OPACITY}
+          transform={`translate(0, ${2 * SOCKET_Y}) scale(1, -1)`}
+          pointerEvents="none"
+        >
+          <Path
+            d="M110.011 55.54l-7.651-5.028H90.7l-7.652 5.028v44.539l6.377 6.535h14.209l6.377-6.535V55.54z"
+            fill={`url(#${id('paint22')})`}
+          />
+          <Path
+            d="M110.011 55.54l-6.377-4.19v55.264l6.377-6.535V55.54z"
+            fill={`url(#${id('paint23')})`}
+          />
+          <Path
+            d="M83.048 55.54l6.377-4.19v55.264l-6.377-6.535V55.54z"
+            fill={`url(#${id('paint24')})`}
+          />
+          {showCapR && (
+            <G
+              transform={`translate(0, ${
+                capTopR - CAP_Y.right + CAP_NUDGE.right - CAP_OVERLAP
+              })`}
+            >
+              <Path
+                d="M102.362 50.515h-11.66l-7.652 5.028 6.377 6.535h14.21l6.377-6.535-7.652-5.028z"
+                fill={`url(#${id('paint25')})`}
+              />
+            </G>
+          )}
+        </G>
+      )} */}
+
       <Text
         x={cx(BAR.left.x1, BAR.left.x2)}
         y={labelY(capTopL - 7)}

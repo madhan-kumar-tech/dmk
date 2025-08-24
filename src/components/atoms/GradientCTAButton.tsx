@@ -65,6 +65,5 @@ const styles = StyleSheet.create({
   },
   text: {
     color: AppTheme.colors.primary,
-    marginLeft: 8,
   },
 });

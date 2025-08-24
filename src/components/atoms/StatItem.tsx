@@ -31,7 +31,7 @@ export const StatItem: React.FC<{
           style={{
             width: hs(10),
             height: vs(10),
-            marginRight: hs(1),
+            marginRight: hs(2),
           }}
         />
       )}

@@ -79,7 +79,9 @@ export const BottomActions: React.FC<BottomActionsProps> = ({
             title={footerLabel}
             onPress={handleFooterPress}
             leftIcon={
-              <DoubleArrowLeftSvg width={14} height={14} color="white" />
+              <View style={{ marginRight: 8 }}>
+                <DoubleArrowLeftSvg width={14} height={14} color="white" />
+              </View>
             }
             disabled={false}
             gradientStyle={{ width: '100%', height: 48, borderRadius: 8 }}

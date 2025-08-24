@@ -31,6 +31,18 @@ export const AppTheme = {
       lineHeight: Math.round((typography.fontSizes.xSmall + 2) * 1.3),
       color: DesignTokens.colors.text.primary,
     },
+    small_head_desc1: {
+      fontFamily: resolveFont('headings', 'regular'),
+      fontSize: typography.fontSizes.xSmall2,
+      lineHeight: Math.round((typography.fontSizes.xSmall2 + 2) * 1.3),
+      color: DesignTokens.colors.text.primary,
+    },
+    small_tamil_desc1: {
+      fontFamily: resolveFont('tamil', 'regular'),
+      fontSize: typography.fontSizes.xSmall2,
+      lineHeight: Math.round((typography.fontSizes.xSmall2 + 2) * 1.3),
+      color: DesignTokens.colors.text.primary,
+    },
     desc: {
       fontFamily: resolveFont('tamil', 'regular'),
       fontSize: typography.fontSizes.small,

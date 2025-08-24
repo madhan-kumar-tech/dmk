@@ -116,7 +116,7 @@ export const OTPInput: React.FC<Props> = ({
         ))}
       </View>
 
-      <View style={s.footer}>
+      {/* <View style={s.footer}>
         <AppText variant="t_body" style={s.helpText}>
           {helperText ?? 'OTP கிடைக்கவில்லையா?'}
         </AppText>
@@ -136,7 +136,7 @@ export const OTPInput: React.FC<Props> = ({
             </AppText>
           </TouchableOpacity>
         )}
-      </View>
+      </View> */}
     </View>
   );
 };

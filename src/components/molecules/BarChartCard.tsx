@@ -25,7 +25,7 @@ export const BarChartCard: React.FC<Props> = ({
 
   const values = dataFilterValues.map(item => item.value);
   const maxValue = Math.max(...values);
-  const maxWithBuffer = maxValue + 1000;
+  const maxWithBuffer = maxValue + 100;
 
   const stringValues = values.map(String);
 
@@ -56,7 +56,7 @@ export const BarChartCard: React.FC<Props> = ({
               key={i}
               label={it.label}
               color={it.color}
-              textVariant="small_head_desc"
+              textVariant="small_head_desc1"
             />
           ))}
         </View>
@@ -65,7 +65,7 @@ export const BarChartCard: React.FC<Props> = ({
           textStyle={styles.ctaTextStyle}
           title={`மொத்தம் : ${total?.toLocaleString('en-US')}`}
           disabled={false}
-          textVariant="small_desc"
+          textVariant="small_tamil_desc1"
           gradientStyle={styles.gradientStyle}
         />
       </GradientBorderCard>
