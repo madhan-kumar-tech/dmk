@@ -3,7 +3,6 @@ import { StateStorage } from 'zustand/middleware';
 
 export const mmkvStorage = new MMKV({
   id: 'dmk-app-storage',
-  encryptionKey: 'your-encryption-key-here',
 });
 
 export const createMMKVStorage = (): StateStorage => ({

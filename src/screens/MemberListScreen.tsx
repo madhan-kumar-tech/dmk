@@ -7,7 +7,7 @@ import { ApiUiType, UI_TO_SCREEN } from '../types/ui';
 import { ApiStateHandler } from '../components/states/ApiStateHandler';
 import type { MemberListResponse, MemberRow } from '../types';
 
-const MembetListScreen: React.FC = () => {
+const MemberListScreen: React.FC = () => {
   const { params } = useDMKRoute('MemberList');
 
   const descriptor = useMemo(() => {
@@ -98,4 +98,4 @@ const MembetListScreen: React.FC = () => {
   );
 };
 
-export { MembetListScreen };
+export { MemberListScreen };

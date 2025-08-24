@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react';
-import { ScrollView, View } from 'react-native';
+import { ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { makeStyles } from '../theme/responsive';
 import { AppText } from '../components/ui';
@@ -26,7 +26,6 @@ import {
 } from '../features/complaint/utils';
 import { pickMultipleImages } from '../services/imagePicker';
 import { readFileAsBase64, extFromMime } from '../services/base64';
-import { GradientCTAButton } from '../components/atoms';
 import { useDMKNavigation } from '../hooks';
 import { SCREEN_NAMES } from '../constants';
 import { useResendTimer } from '../hooks/useResendTimer';
