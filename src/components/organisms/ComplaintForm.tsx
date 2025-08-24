@@ -1,12 +1,12 @@
 import React from 'react';
-import { View, TextInput, StyleSheet, ViewStyle } from 'react-native';
+import { View, ViewStyle, TextStyle } from 'react-native';
 import { AppText } from '../ui';
 import { makeStyles, vs } from '../../theme/responsive';
 import type { PickedImage } from '../../types/home';
 import { InlineButton } from '../atoms/InlineButton';
 import { PhoneVerifiedBadge } from '../atoms/PhoneVerifiedBadge';
 import { AttachmentGrid } from '../molecules/AttachmentGrid';
-import { OTPInput } from '../atoms';
+import { OTPInput, StyledTextInput } from '../atoms';
 import { InnerShadow } from '../../../ui/atoms/InnerShadow';
 
 export type ComplaintFormValues = {
@@ -82,7 +82,7 @@ export const ComplaintForm: React.FC<Props> = ({
                   +91
                 </AppText>
               </View>
-              <TextInput
+              <StyledTextInput
                 style={s.textInput}
                 keyboardType="number-pad"
                 value={values.phone}
@@ -92,7 +92,6 @@ export const ComplaintForm: React.FC<Props> = ({
                 placeholder="தொலைபேசி எண்"
                 maxLength={10}
                 placeholderTextColor="#9AA0A6"
-                underlineColorAndroid="transparent"
               />
             </View>
           </View>
@@ -124,7 +123,7 @@ export const ComplaintForm: React.FC<Props> = ({
               உங்கள் புகார்
             </AppText>
             <View>
-              <TextInput
+              <StyledTextInput
                 style={[s.input, s.multiline]}
                 value={values.details}
                 onChangeText={t => onChange({ details: t })}
@@ -134,7 +133,7 @@ export const ComplaintForm: React.FC<Props> = ({
                 numberOfLines={5}
                 textAlignVertical="top"
               />
-              <InnerShadow opacity={0.09}/>
+              <InnerShadow opacity={0.09} />
             </View>
           </View>
 
@@ -169,7 +168,7 @@ const useStyles = makeStyles(() => ({
     marginBottom: 6,
     fontSize: 16,
   },
-  card: {marginTop: 12},
+  card: { marginTop: 12 },
   field: { marginBottom: vs(12) },
   input: {
     borderWidth: 1,
@@ -179,8 +178,13 @@ const useStyles = makeStyles(() => ({
     paddingVertical: 10,
     backgroundColor: '#fff',
     fontSize: 16,
+    // Ensure no underline on Android
+    textDecorationLine: 'none' as const,
   },
-  multiline: { height: 140 },
+  multiline: {
+    height: 140,
+    textAlignVertical: 'top' as const, // Important for Android multiline inputs
+  },
   phoneWrapper: {
     position: 'relative' as const,
     height: 48,
@@ -263,5 +267,6 @@ const useStyles = makeStyles(() => ({
     borderBottomRightRadius: 12,
     fontFamily: 'Roboto-Regular',
     fontSize: 18,
-  },
+    textDecorationLine: 'none',
+  } as TextStyle,
 }));
