@@ -58,7 +58,6 @@ export const ApiStateHandler: React.FC<Props> = ({
     if (norm.isEmpty || isEmpty) {
       return (
         <View style={s.fill}>
-          <AppHeader title="T.N.பாளையம் ஒன்றிய திமுக" />
           <EmptyState
             title={emptyTitle}
             subtitle={emptySubtitle}
@@ -71,7 +70,6 @@ export const ApiStateHandler: React.FC<Props> = ({
 
     return (
       <View style={s.fill}>
-        <AppHeader title="T.N.பாளையம் ஒன்றிய திமுக" />
         <ErrorState
           title="Something went wrong"
           message={norm.message || 'Unable to load data. Please try again.'}
@@ -86,7 +84,6 @@ export const ApiStateHandler: React.FC<Props> = ({
   if (isEmpty) {
     return (
       <View style={s.fill}>
-        <AppHeader title="T.N.பாளையம் ஒன்றிய திமுக" />
         <EmptyState
           title={emptyTitle}
           subtitle={emptySubtitle}

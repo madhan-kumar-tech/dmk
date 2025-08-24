@@ -280,24 +280,6 @@ export const ComplaintScreen: React.FC = () => {
     setValues(v => ({ ...v, ...p }));
   };
 
-  const resetAll = () => {
-    setDD1(undefined);
-    setDD2(undefined);
-    setDD3(undefined);
-    setDD4(undefined);
-
-    setValues({ phone: '', otp: '', details: '' });
-
-    setVerifiedPhone(null);
-    setPending(null);
-    setComplaintId(null);
-
-    setImages([]);
-    setFileError(null);
-
-    setSuccess(false);
-  };
-
   const onPrimary = async () => {
     if (!selectionsReady) return;
 
@@ -342,30 +324,6 @@ export const ComplaintScreen: React.FC = () => {
       (!values.details?.trim() || !!fileError));
 
   const showSuccess = success;
-
-  if (showSuccess) {
-    return (
-      <View>
-        <View style={{ paddingVertical: 24 }}>
-          <AppText variant="t_header" style={{ textAlign: 'center' }}>
-            உங்கள் புகார் வெற்றிகரமாக சமர்ப்பிக்கப்பட்டது
-          </AppText>
-        </View>
-        {}
-        <GradientCTAButton
-          title={'மற்றொரு புகாரை எழுப்பவும்'}
-          onPress={resetAll}
-          gradientStyle={{
-            width: '75%',
-            height: 35,
-            borderRadius: 8,
-            alignSelf: 'center',
-          }}
-          block
-        />
-      </View>
-    );
-  }
 
   return (
     <SafeAreaView style={s.root} edges={['left', 'right', 'bottom']}>

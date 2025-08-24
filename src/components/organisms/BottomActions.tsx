@@ -35,17 +35,20 @@ export const BottomActions: React.FC<BottomActionsProps> = ({
   const state = navigation.getState();
   const prevRouteName = state.routes[state.index - 1]?.name;
 
-  const outlineLabel = outlineButtonLabel ?? 'மெனின் மெனு';
+  const outlineLabel = outlineButtonLabel ?? 'மெயின் மெனு';
   const footerLabel = footerCtaLabel ?? 'முந்தைய பகுதிக்குச் செல்லவும்';
 
   const showFooter =
     !hideBackButton && !!footerLabel && navigation?.canGoBack();
 
+  const currentRouteName = state?.routes?.[state?.index]?.name;
+
   const shouldShowOutline =
-    !hideMainMenuButton &&
-    !!outlineLabel &&
-    prevRouteName !== SCREEN_NAMES.DASHBOARD &&
-    navigation?.canGoBack();
+    currentRouteName === SCREEN_NAMES.SUCCESS_SCREEN ||
+    (!hideMainMenuButton &&
+      !!outlineLabel &&
+      prevRouteName !== SCREEN_NAMES.DASHBOARD &&
+      navigation?.canGoBack());
 
   const handleOutlinePress = useCallback(() => {
     if (onPressOutlineButton) return onPressOutlineButton();
