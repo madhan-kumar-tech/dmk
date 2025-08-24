@@ -141,21 +141,22 @@ export const OTPInput: React.FC<Props> = ({
   );
 };
 
-const BOX = 64;
+const BOX = 58;
 const useStyles = makeStyles(
   r =>
     ({
       wrap: { marginBottom: 8 },
       row: {
         flexDirection: 'row',
-        justifyContent: 'space-between',
+        // justifyContent: 'space-between',
         marginTop: 6,
         marginBottom: 8,
+        columnGap: 16, // Reduce gap between OTP boxes
       },
       box: {
         width: r.responsiveWidth(BOX),
         height: r.responsiveHeight(BOX),
-        borderRadius: 16,
+        borderRadius: 10,
         backgroundColor: '#fff',
         textAlign: 'center' as const,
         fontSize: 24,
@@ -182,7 +183,6 @@ const useStyles = makeStyles(
       resend: {
         color: '#15803D',
         fontWeight: '700',
-        textDecorationLine: 'underline',
       },
       resendDisabled: { color: '#94A3B8', textDecorationLine: 'none' },
     } as any),

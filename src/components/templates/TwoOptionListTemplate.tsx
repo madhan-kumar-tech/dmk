@@ -8,6 +8,9 @@ import { BottomActions } from '../organisms';
 import { AppText } from '../ui';
 import { ApiDescriptor } from '../../types/api';
 import { ApiUiType } from '../../types/ui';
+import { AppTheme } from '../../theme';
+import ArrowRightIcon from '../../svg/RightArrowSvg';
+
 
 export interface OptionItem {
   value: number | string;
@@ -59,7 +62,7 @@ export const TwoOptionListTemplate: React.FC<Props> = ({
             >
               <Card style={s.item}>
                 <Text style={s.optionText}>{item.label}</Text>
-                <Text style={s.chev}>›</Text>
+                <ArrowRightIcon width={18} height={18} color="black" />
               </Card>
             </TouchableOpacity>
           )}
@@ -73,7 +76,7 @@ export const TwoOptionListTemplate: React.FC<Props> = ({
 };
 
 const useStyles = makeStyles(() => ({
-  root: { flex: 1, backgroundColor: '#f6f7f8' },
+  root: { flex: 1, backgroundColor: AppTheme.colors.background.light },
   body: { flex: 1 },
   footer: { padding: 16, backgroundColor: '#fff' },
   item: {
@@ -84,5 +87,4 @@ const useStyles = makeStyles(() => ({
   optionText: {
     fontSize: 16,
   } satisfies TextStyle,
-  chev: { fontSize: 22, color: '#888' },
 }));

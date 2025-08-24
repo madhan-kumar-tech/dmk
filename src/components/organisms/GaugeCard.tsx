@@ -36,7 +36,7 @@ export const GaugeCard: React.FC<Props> = ({
 
         <View style={styles.row}>
           {dataFilterValues.map((it, i) => (
-            <StatItem key={i} label={it.label} value={it.value} />
+            <StatItem key={i} label={it.label} value={it.value} textVariant='body'/>
           ))}
         </View>
         <GradientCTAButton

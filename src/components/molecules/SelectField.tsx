@@ -12,6 +12,10 @@ import { makeStyles } from '../../theme/responsive';
 import { AppText } from '../ui';
 import { InnerShadow } from '../../../ui/atoms/InnerShadow';
 import MaterialDesignIcons from '@react-native-vector-icons/material-design-icons';
+import HomeBuildingSvg from '../../svg/HomeBuildingSvg';
+import ChevronDownSvg from '../../svg/ArrowDownSvg';
+import LocationSvg from '../../svg/locationSvg';
+import VoteSvg from '../../svg/VoteSvg';
 
 export type SelectOption = {
   value: string | number;
@@ -115,34 +119,26 @@ export const SelectField: React.FC<Props> = ({
           ]}
           activeColor="#F7F8FA"
           placeholder={ellipsize(placeholder, placeholderMaxChars)}
-          placeholderStyle={s.placeholder}
+          placeholderStyle={!isDisabled ? s.placeholder : s.placeholderDisable}
           selectedTextStyle={s.selectedText}
           selectedTextProps={{ numberOfLines: 1, ellipsizeMode: 'tail' }}
           itemTextStyle={s.itemText}
           inputSearchStyle={s.inputSearch}
           iconStyle={s.iconStyle}
-          renderLeftIcon={() => (
-            <MaterialDesignIcons
-              name={(leftIcon as any) || 'home-city-outline'}
-              color="#9AA0A6"
-              size={24}
-              style={{ marginRight: 10 }}
-            />
-          )}
-          renderRightIcon={
-            rightIcon
-              ? () => <>{rightIcon}</>
-              : () =>
-                  loading ? (
-                    <ActivityIndicator
-                      size="small"
-                      color="#666"
-                      style={{ marginRight: 6 }}
-                    />
-                  ) : (
-                    <AppText style={s.caret}>▾</AppText>
-                  )
-          }
+          renderLeftIcon={() => {
+            const iconColor = isDisabled ? '#e4e4e4' : '#9AA0A6';
+            if (leftIcon === 'home-city-outline') {
+              return <View style={{ marginRight: 8 }}><HomeBuildingSvg width={22} height={22} color={iconColor} /></View>;
+            }
+            if (leftIcon === 'map-marker-radius-outline') {
+              return <View style={{ marginRight: 8 }}><LocationSvg width={22} height={22} color={iconColor} /></View>;
+            }
+            if (leftIcon === 'vote') {
+              return <View style={{ marginRight: 8 }}><VoteSvg width={22} height={22} color={iconColor} /></View>;
+            }
+            return null;
+          }}
+          renderRightIcon={() => <ChevronDownSvg width={18} height={10} color={ !isDisabled ? '#9AA0A6' : '#e4e4e4'} />}
           renderItem={item => {
             const active = item.value === value;
             return (
@@ -158,6 +154,7 @@ export const SelectField: React.FC<Props> = ({
             );
           }}
         />
+        <InnerShadow style={{ borderRadius: 12 }} opacity={!isDisabled ? 0.04 : 0} thickness={!isDisabled ? 6 : 0} />
         {inset && <InnerShadow />}
       </View>
 
@@ -171,15 +168,15 @@ export const SelectField: React.FC<Props> = ({
 };
 
 const useStyles = makeStyles(() => ({
-  container: { marginBottom: 12 } as ViewStyle,
-  label: { opacity: 0.9, marginBottom: 6, fontSize: 16 } as TextStyle,
+  container: { marginVertical: 12} as ViewStyle,
+  label: { opacity: 0.9, marginBottom: 6, fontSize: 16 , color: '#1F1F1F'} as TextStyle,
   field: {
     minHeight: 48,
     borderRadius: 12,
     paddingHorizontal: 12,
     backgroundColor: '#fff',
     borderWidth: 1,
-    borderColor: '#E1E4E8',
+    borderColor: '#f8f8f8',
     ...Platform.select({
       ios: {
         shadowColor: '#000',
@@ -191,8 +188,12 @@ const useStyles = makeStyles(() => ({
     }),
   } as ViewStyle,
   fieldDisabled: {
-    backgroundColor: '#F4F5F6',
-    borderColor: '#E7E9EC',
+    backgroundColor: '#FDFDFD',
+    borderColor: '#f8f8f8',
+    opacity: 1,
+    // Remove shadow for disabled
+    shadowColor: 'transparent',
+    elevation: 0,
   } as ViewStyle,
   dropdownContainer: {
     borderRadius: 12,
@@ -218,8 +219,17 @@ const useStyles = makeStyles(() => ({
     marginRight: 8,
   } as ViewStyle,
   iconStyle: { width: 0, height: 0 } as ImageStyle,
-  placeholder: { color: '#9AA1A7' } as TextStyle,
-  selectedText: { color: '#111' } as TextStyle,
+  placeholderDisable:{
+    color: '#e4e4e4',
+  },
+  placeholder: {
+    color: '#9AA0A6',
+    opacity: 0.6,
+  } as TextStyle,
+  selectedText: {
+    color: '#1F1F1F',
+    opacity: 0.6,
+  } as TextStyle,
   itemText: {} as TextStyle,
   inputSearch: {
     borderColor: '#E1E4E8',

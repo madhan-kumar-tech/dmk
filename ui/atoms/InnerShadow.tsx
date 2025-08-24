@@ -13,7 +13,7 @@ type Props = {
 export const InnerShadow: React.FC<Props> = ({
   radius = 12,
   opacity = 0.04,
-  thickness = 10,
+  thickness = 6,
   style,
   edges = { top: true, right: true, bottom: true, left: true },
 }) => {

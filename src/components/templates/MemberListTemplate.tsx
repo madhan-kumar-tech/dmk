@@ -6,6 +6,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { AppText } from '../ui';
 import type { MemberRow } from '../../types';
 import { BottomActions } from '../organisms';
+import { AppTheme } from '../../theme';
 
 type Props = {
   title?: string;
@@ -89,6 +90,6 @@ export const MemberListTemplate: React.FC<Props> = ({
 };
 
 const useStyles = makeStyles(() => ({
-  root: { flex: 1, backgroundColor: '#f6f7f8' },
+  root: { flex: 1, backgroundColor: AppTheme.colors.background.light },
   body: { flex: 1 },
 }));

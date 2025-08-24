@@ -11,11 +11,11 @@ export const Card: React.FC<{
 const useStyles = makeStyles(() => ({
   card: {
     backgroundColor: '#fff',
-    borderRadius: 12,
+    borderRadius: 8,
     padding: 14,
     shadowColor: '#000',
     shadowOpacity: 0.06,
     shadowRadius: 8,
-    elevation: 2,
+    elevation: 1,
   } satisfies ViewStyle,
 }));
