@@ -9,8 +9,8 @@
     
     <!-- Center the splash icon -->
     <item 
-        android:width="120dp"
-        android:height="120dp"
+        android:width="200dp"
+        android:height="200dp"
         android:gravity="center">
         <bitmap 
             android:src="@drawable/splash_icon"

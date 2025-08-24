@@ -17,27 +17,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SplashIcon" translatesAutoresizingMaskIntoConstraints="NO" id="DMK-Icon-View">
-                                <rect key="frame" x="137.5" y="253.5" width="120" height="120"/>
+                                <rect key="frame" x="87.5" y="233.5" width="200" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="icon-width"/>
-                                    <constraint firstAttribute="height" constant="120" id="icon-height"/>
+                                    <constraint firstAttribute="width" constant="200" id="icon-width"/>
+                                    <constraint firstAttribute="height" constant="200" id="icon-height"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="T.N.பாளையம் ஒன்றிய திமுக" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DMK-Text-Label">
-                                <rect key="frame" x="20" y="401.5" width="335" height="21"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="DMK-Icon-View" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="icon-center-x"/>
-                            <constraint firstItem="DMK-Icon-View" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-20" id="icon-center-y"/>
-                            <constraint firstItem="DMK-Text-Label" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="text-center-x"/>
-                            <constraint firstItem="DMK-Text-Label" firstAttribute="top" secondItem="DMK-Icon-View" secondAttribute="bottom" constant="28" id="text-spacing"/>
-                            <constraint firstItem="DMK-Text-Label" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" constant="20" id="text-leading"/>
-                            <constraint firstItem="Bcu-3y-fUS" firstAttribute="trailing" secondItem="DMK-Text-Label" secondAttribute="trailing" constant="20" id="text-trailing"/>
+                            <constraint firstItem="DMK-Icon-View" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="icon-center-y"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Bcu-3y-fUS"/>
                     </view>
@@ -48,6 +38,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="SplashIcon" width="120" height="120"/>
+        <image name="SplashIcon" width="200" height="200"/>
     </resources>
 </document>
