@@ -11,3 +11,4 @@ export * from './StatItem';
 export * from './SearchBar';
 export * from './DetailRow';
 export * from './LoaderOverlay';
+export * from './StyledTextInput';
