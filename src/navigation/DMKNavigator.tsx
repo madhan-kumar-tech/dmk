@@ -8,7 +8,7 @@ import { AppHeader } from '../components/common/AppHeader';
 import {
   HomeScreen,
   MemberDetailScreen,
-  MembetListScreen,
+  MemberListScreen,
   SuccessScreen,
   TwoOptionListScreen,
 } from '../screens';
@@ -49,7 +49,7 @@ export const DMKNavigator: React.FC = () => {
       />
       <Stack.Screen
         name={SCREEN_NAMES.MEMBER_LIST}
-        component={MembetListScreen}
+        component={MemberListScreen}
         options={{
           headerShown: true,
         }}
