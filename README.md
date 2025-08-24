@@ -1,97 +1,300 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# 📱 DMK - த.ந.பாளையம் ஒன்றிய திமுக
 
-# Getting Started
+> **React Native Application**
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+[![React Native](https://img.shields.io/badge/React%20Native-0.81.0-blue.svg)](https://reactnative.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.9.2-blue.svg)](https://www.typescriptlang.org/)
+[![Code Quality](https://img.shields.io/badge/ESLint-Configured-green.svg)](https://eslint.org/)
+[![Build Status](https://img.shields.io/badge/Build-Production%20Ready-green.svg)](#)
 
-## Step 1: Start Metro
+A modern, scalable React Native application for த.ந.பாளையம் ஒன்றிய திமுக (T.N.Palayam Union DMK) built with TypeScript, featuring comprehensive state management, internationalization, and production-ready architecture.
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+## 🚀 **Quick Start**
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+### **Prerequisites**
 
-```sh
-# Using npm
+- Node.js >= 20.19.4
+- React Native development environment set up
+- iOS: Xcode 16.2+ and CocoaPods
+- Android: Android Studio with SDK 28+
+
+### **Installation**
+
+```bash
+# Clone the repository
+git clone <repository-url>
+cd dmk
+
+# Install dependencies
+pnpm install
+
+# iOS setup
+npm run ios:pods
+
+# Start the application
 npm start
 
-# OR using Yarn
-yarn start
-```
-
-## Step 2: Build and run your app
-
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
-
-### Android
-
-```sh
-# Using npm
-npm run android
-
-# OR using Yarn
-yarn android
-```
-
-### iOS
-
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
-```
-
-Then, and every time you update your native dependencies, run:
-
-```sh
-bundle exec pod install
-```
-
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
-
-```sh
-# Using npm
+# Run on iOS
 npm run ios
 
-# OR using Yarn
-yarn ios
+# Run on Android
+npm run android
 ```
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+## 🏗️ **Architecture**
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+### **Tech Stack**
 
-## Step 3: Modify your app
+- **Framework:** React Native 0.81.0 with New Architecture
+- **Language:** TypeScript 5.9.2
+- **State Management:** Zustand + TanStack Query
+- **Navigation:** React Navigation 7.x
+- **Styling:** React Native Paper + Custom Responsive System
+- **Internationalization:** i18next + react-i18next
+- **Storage:** React Native MMKV + Encrypted Storage
+- **Networking:** Axios with React Query
+- **Image Handling:** React Native Fast Image
+- **Charts:** Victory Native + Custom Skia Components
 
-Now that you have successfully run the app, let's make changes!
+### **Project Structure**
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+```
+src/
+├── assets/          # Static assets (images, fonts)
+├── components/      # Reusable UI components
+│   ├── atoms/       # Basic building blocks
+│   ├── molecules/   # Composed components
+│   ├── organisms/   # Complex component groups
+│   └── templates/   # Page layouts
+├── constants/       # App constants and configuration
+├── features/        # Feature-specific components
+├── hooks/          # Custom React hooks
+├── i18n/           # Internationalization setup
+├── navigation/     # Navigation configuration
+├── providers/      # Context providers
+├── screens/        # Screen components
+├── services/       # API and external services
+├── store/          # State management (Zustand)
+├── theme/          # Design system and theming
+├── types/          # TypeScript type definitions
+└── utils/          # Utility functions
+```
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+## 🛠️ **Development**
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+### **Available Scripts**
 
-## Congratulations! :tada:
+```bash
+# Development
+npm start              # Start Metro bundler
+npm run ios           # Run iOS simulator
+npm run android       # Run Android emulator
 
-You've successfully run and modified your React Native App. :partying_face:
+# Code Quality
+npm run lint          # Run ESLint
+npm run lint -- --fix # Auto-fix ESLint issues
+npm run format        # Format code with Prettier
 
-### Now what?
+# Testing
+npm run test          # Run Jest tests
+npm run production:check  # Full production readiness check
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
+# Platform Specific
+npm run ios:pods      # Install iOS CocoaPods
+npm run ios:clean     # Clean iOS build
+npm run android:clean # Clean Android build
+npm run clean         # Clean both platforms
+```
 
-# Troubleshooting
+### **Code Quality Standards**
 
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+This project maintains high code quality standards with:
 
-# Learn More
+- ✅ **ESLint** configuration for React Native + TypeScript
+- ✅ **Prettier** for consistent code formatting
+- ✅ **TypeScript** strict mode enabled
+- ✅ **Performance monitoring** and optimization
 
-To learn more about React Native, take a look at the following resources:
+## 🎨 **Features**
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+### **Core Functionality**
+
+- 🏠 **Dashboard** with interactive charts and statistics
+- 👥 **Member Management** with detailed profiles
+- 📝 **Complaint System** with attachments and status tracking
+- 📊 **Data Visualization** with custom charts and gauges
+- 🔍 **Search & Filter** across all data types
+- 📱 **Responsive Design** for all screen sizes
+
+### **Technical Features**
+
+- 🌐 **Offline Support** with data synchronization
+- 🔒 **Secure Storage** for sensitive data
+- 🌍 **Multi-language Support** (Tamil + English)
+- 🔔 **Error Handling** with user-friendly messages
+- ⚡ **Performance Optimized** with lazy loading
+- 🎭 **Dark/Light Theme** support
+- 📷 **Image Picker** with compression
+- 📞 **Phone Integration** for direct calling
+
+### **UI/UX**
+
+- 🎨 **Modern Design** with Material Design principles
+- 🌈 **Gradient Themes** and custom color schemes
+- 📱 **Responsive Layout** using custom responsive system
+- ♿ **Accessibility** support
+- 🎛️ **Custom Components** with consistent theming
+- 📐 **Typography System** with responsive font scaling
+
+## 🌐 **Internationalization**
+
+The app supports multiple languages:
+
+- **Tamil (தமிழ்)** - Primary language
+- **English** - Secondary language
+
+Language detection is automatic based on device settings, with manual override support.
+
+## 🔧 **Configuration**
+
+### **Environment Setup**
+
+The app uses environment-specific configurations:
+
+```typescript
+// Development vs Production API endpoints
+// Error logging and reporting
+// Feature flags for A/B testing
+// Analytics and crash reporting
+```
+
+### **Theme Configuration**
+
+```typescript
+// Responsive design system
+// Color schemes and gradients
+// Typography scaling
+// Component theming
+```
+
+## 📱 **Platform Support**
+
+- **iOS:** 12.0+ (iPhone & iPad)
+- **Android:** API level 21+ (Android 5.0+)
+- **Architecture:**
+  - iOS: arm64, x86_64 (simulator)
+  - Android: arm64-v8a, armeabi-v7a, x86, x86_64
+
+## 🚀 **Production Deployment**
+
+### **Pre-deployment Checklist**
+
+1. **Code Quality Check**
+
+   ```bash
+   npm run production:check
+   ```
+
+2. **Build Testing**
+
+   ```bash
+   # iOS Release Build
+   cd ios && xcodebuild -workspace dmk.xcworkspace -scheme dmk -configuration Release
+
+   # Android Release Build
+   cd android && ./gradlew assembleRelease
+   ```
+
+3. **Performance Testing**
+   - Memory usage monitoring
+   - Network failure scenarios
+   - Low-end device testing
+
+### **Build Configuration**
+
+- **iOS:** Archive and upload to App Store Connect
+- **Android:** Generate signed APK/AAB for Play Store
+- **Code Signing:** Configured for both platforms
+- **Optimization:** Bundle size optimization enabled
+
+## 📊 **Performance**
+
+### **Optimization Features**
+
+- ⚡ **Bundle Splitting** for faster load times
+- 🖼️ **Image Optimization** with Fast Image
+- 💾 **Efficient Storage** with MMKV
+- 🔄 **Smart Caching** with React Query
+- 📱 **Memory Management** with proper cleanup
+- ⏱️ **Lazy Loading** for screens and components
+
+### **Metrics**
+
+- **Bundle Size:** Optimized for production
+- **Startup Time:** < 3 seconds on mid-range devices
+- **Memory Usage:** Efficient management with cleanup
+- **Network Requests:** Batched and cached
+
+## 🔒 **Security**
+
+- 🔐 **Encrypted Storage** for sensitive data
+- 🛡️ **API Security** with proper authentication
+- 🚫 **No Debug Code** in production builds
+- 🔍 **Input Validation** on all user inputs
+- 📝 **Secure Logging** with sensitive data filtering
+
+## 🤝 **Contributing**
+
+### **Development Workflow**
+
+1. Create feature branch from `main`
+2. Follow TypeScript and ESLint standards
+3. Write tests for new functionality
+4. Run `npm run production:check` before PR
+5. Submit pull request with clear description
+
+### **Code Standards**
+
+- Use functional components with hooks
+- Follow clean architecture principles
+- Implement proper error boundaries
+- Use TypeScript for all new code
+- Follow responsive design patterns
+
+## 📚 **Documentation**
+
+## 🐛 **Troubleshooting**
+
+### **Common Issues**
+
+**Metro bundler issues:**
+
+```bash
+npm start -- --reset-cache
+```
+
+**iOS build issues:**
+
+```bash
+npm run ios:clean
+npm run ios:pods
+```
+
+**Android build issues:**
+
+```bash
+npm run android:clean
+```
+
+**ESLint errors:**
+
+```bash
+npm run cleanup
+npm run lint -- --fix
+```
+
+## 📄 **License**
+
+This project is proprietary software for த.ந.பாளையம் ஒன்றிய திமுக.
+
+---

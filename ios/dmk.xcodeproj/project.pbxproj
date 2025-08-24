@@ -7,24 +7,70 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0C80B921A6F3F58F76C31292 /* libPods-dmk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-dmk.a */; };
+		011ED7D84DF94D75A231C39B /* Nunito-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 31E7756DAC91491AAA8D8E52 /* Nunito-Medium.ttf */; };
+		0C37900FD04747BC842DE591 /* Montserrat-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A7A173B06016476EB1F09115 /* Montserrat-ExtraBold.ttf */; };
+		0D87DC6F4E0641A995C9F100 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6D73F8DDD854CDE8CCEFE03 /* Roboto-Light.ttf */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
+		15A751CF8F1E43AD9F7C00B0 /* Montserrat-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01E66168EE4844E49B957AC0 /* Montserrat-Italic.ttf */; };
+		31CDA1C51E8C47D7942B2FA4 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8899A52781E5458EAD2B7094 /* Montserrat-Regular.ttf */; };
+		3B14FB6F7A314823962F494A /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9E9E766413E74FDC94438FEA /* Roboto-Bold.ttf */; };
 		430F0C85A9C45682B33AF12D /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */; };
+		494E3718D3924CD68A846411 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FEF0906BCC5444EBB7830678 /* Roboto-Medium.ttf */; };
+		59C802A0095A49649626EC23 /* NotoSansTamil-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3C56AD8D8D0049DAA0E02FE6 /* NotoSansTamil-Regular.ttf */; };
+		5E8B81278B43407BA6D6F0FD /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C5BAE5468B24516B2CC297D /* Roboto-Regular.ttf */; };
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
+		77FFADF78FC1444A805FD1CA /* Nunito-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F22E668AD32C418A8F97DB2B /* Nunito-Italic.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		8AD4A28859F64D0C9DC9ABA7 /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 012BC345649F49839449FB79 /* Nunito-Regular.ttf */; };
+		9E1CB53C8AD14D178495326C /* NotoSansTamil-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 812DF9132EEF4313A6BB2EDF /* NotoSansTamil-SemiBold.ttf */; };
+		AB569E9A01F64820A83E78D2 /* NotoSansTamil-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E58171A458DB4B408FC42FBC /* NotoSansTamil-Bold.ttf */; };
+		B0B70A19FF79493A873BEC3B /* NotoSansTamil-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AE40158CCA204372AA10C678 /* NotoSansTamil-ExtraBold.ttf */; };
+		B926B7555C8F47E88BB47C4F /* Nunito-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F0754E0ACAB4FADA2784098 /* Nunito-ExtraBold.ttf */; };
+		C77013F505F345FBBCC96A0B /* NotoSansTamil-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B399D6CF97D341BE95A81586 /* NotoSansTamil-Medium.ttf */; };
+		D5A99A62D387444EB99AC73A /* Nunito-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5FCD7C6AD8334D2683C322E5 /* Nunito-SemiBold.ttf */; };
+		DE846491C5744BB89024F43E /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 337DBD31937E4C8EB28F20F0 /* Nunito-Bold.ttf */; };
+		DF3FC768EC3D88572FD47C85 /* libPods-dmk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D03231730BC28767EAD05FE6 /* libPods-dmk.a */; };
+		E0BE2B8B913B40698B10CA7D /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8D7534EA46F74A969EB1C5B1 /* Montserrat-SemiBold.ttf */; };
+		E1861936646E461397E758B7 /* Roboto-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EAB2792B47554DD6A885A340 /* Roboto-ExtraBold.ttf */; };
+		F110B4F211E14F8F965F6A2D /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EFD6C2E27BC14C63B8A47094 /* Montserrat-Medium.ttf */; };
+		F1EBA907082D4DA2926B969A /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F106E39049A9437DBF9FE86F /* Montserrat-Bold.ttf */; };
+		FE4030F89BBB4162B1D2BB7D /* Roboto-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4317CF889E3B46C6B3A48BCC /* Roboto-SemiBold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		012BC345649F49839449FB79 /* Nunito-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-Regular.ttf"; path = "../assets/fonts/Nunito-Regular.ttf"; sourceTree = "<group>"; };
+		01E66168EE4844E49B957AC0 /* Montserrat-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Italic.ttf"; path = "../assets/fonts/Montserrat-Italic.ttf"; sourceTree = "<group>"; };
+		0F0754E0ACAB4FADA2784098 /* Nunito-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-ExtraBold.ttf"; path = "../assets/fonts/Nunito-ExtraBold.ttf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* dmk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dmk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = dmk/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = dmk/Info.plist; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = dmk/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		3B4392A12AC88292D35C810B /* Pods-dmk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dmk.debug.xcconfig"; path = "Target Support Files/Pods-dmk/Pods-dmk.debug.xcconfig"; sourceTree = "<group>"; };
-		5709B34CF0A7D63546082F79 /* Pods-dmk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dmk.release.xcconfig"; path = "Target Support Files/Pods-dmk/Pods-dmk.release.xcconfig"; sourceTree = "<group>"; };
-		5DCACB8F33CDC322A6C60F78 /* libPods-dmk.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-dmk.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		31E7756DAC91491AAA8D8E52 /* Nunito-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-Medium.ttf"; path = "../assets/fonts/Nunito-Medium.ttf"; sourceTree = "<group>"; };
+		337DBD31937E4C8EB28F20F0 /* Nunito-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-Bold.ttf"; path = "../assets/fonts/Nunito-Bold.ttf"; sourceTree = "<group>"; };
+		3C56AD8D8D0049DAA0E02FE6 /* NotoSansTamil-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "NotoSansTamil-Regular.ttf"; path = "../assets/fonts/NotoSansTamil-Regular.ttf"; sourceTree = "<group>"; };
+		4317CF889E3B46C6B3A48BCC /* Roboto-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-SemiBold.ttf"; path = "../assets/fonts/Roboto-SemiBold.ttf"; sourceTree = "<group>"; };
+		5FCD7C6AD8334D2683C322E5 /* Nunito-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-SemiBold.ttf"; path = "../assets/fonts/Nunito-SemiBold.ttf"; sourceTree = "<group>"; };
 		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = dmk/AppDelegate.swift; sourceTree = "<group>"; };
+		812DF9132EEF4313A6BB2EDF /* NotoSansTamil-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "NotoSansTamil-SemiBold.ttf"; path = "../assets/fonts/NotoSansTamil-SemiBold.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = dmk/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		844A5A89069116269871A069 /* Pods-dmk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dmk.debug.xcconfig"; path = "Target Support Files/Pods-dmk/Pods-dmk.debug.xcconfig"; sourceTree = "<group>"; };
+		8899A52781E5458EAD2B7094 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Regular.ttf"; path = "../assets/fonts/Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		8D7534EA46F74A969EB1C5B1 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-SemiBold.ttf"; path = "../assets/fonts/Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
+		9C5BAE5468B24516B2CC297D /* Roboto-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Regular.ttf"; path = "../assets/fonts/Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		9E9E766413E74FDC94438FEA /* Roboto-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Bold.ttf"; path = "../assets/fonts/Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		A7A173B06016476EB1F09115 /* Montserrat-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-ExtraBold.ttf"; path = "../assets/fonts/Montserrat-ExtraBold.ttf"; sourceTree = "<group>"; };
+		AE40158CCA204372AA10C678 /* NotoSansTamil-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "NotoSansTamil-ExtraBold.ttf"; path = "../assets/fonts/NotoSansTamil-ExtraBold.ttf"; sourceTree = "<group>"; };
+		B399D6CF97D341BE95A81586 /* NotoSansTamil-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "NotoSansTamil-Medium.ttf"; path = "../assets/fonts/NotoSansTamil-Medium.ttf"; sourceTree = "<group>"; };
+		C53DD10FAA5B1952430898D9 /* Pods-dmk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dmk.release.xcconfig"; path = "Target Support Files/Pods-dmk/Pods-dmk.release.xcconfig"; sourceTree = "<group>"; };
+		C6D73F8DDD854CDE8CCEFE03 /* Roboto-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Light.ttf"; path = "../assets/fonts/Roboto-Light.ttf"; sourceTree = "<group>"; };
+		D03231730BC28767EAD05FE6 /* libPods-dmk.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-dmk.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E58171A458DB4B408FC42FBC /* NotoSansTamil-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "NotoSansTamil-Bold.ttf"; path = "../assets/fonts/NotoSansTamil-Bold.ttf"; sourceTree = "<group>"; };
+		EAB2792B47554DD6A885A340 /* Roboto-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-ExtraBold.ttf"; path = "../assets/fonts/Roboto-ExtraBold.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		EFD6C2E27BC14C63B8A47094 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Medium.ttf"; path = "../assets/fonts/Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		F106E39049A9437DBF9FE86F /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Bold.ttf"; path = "../assets/fonts/Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		F22E668AD32C418A8F97DB2B /* Nunito-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-Italic.ttf"; path = "../assets/fonts/Nunito-Italic.ttf"; sourceTree = "<group>"; };
+		FEF0906BCC5444EBB7830678 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Medium.ttf"; path = "../assets/fonts/Roboto-Medium.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,7 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C80B921A6F3F58F76C31292 /* libPods-dmk.a in Frameworks */,
+				DF3FC768EC3D88572FD47C85 /* libPods-dmk.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,7 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				5DCACB8F33CDC322A6C60F78 /* libPods-dmk.a */,
+				D03231730BC28767EAD05FE6 /* libPods-dmk.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -75,6 +121,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				DF92027E135048AABE5D3DAE /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -92,10 +139,41 @@
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3B4392A12AC88292D35C810B /* Pods-dmk.debug.xcconfig */,
-				5709B34CF0A7D63546082F79 /* Pods-dmk.release.xcconfig */,
+				844A5A89069116269871A069 /* Pods-dmk.debug.xcconfig */,
+				C53DD10FAA5B1952430898D9 /* Pods-dmk.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		DF92027E135048AABE5D3DAE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F106E39049A9437DBF9FE86F /* Montserrat-Bold.ttf */,
+				A7A173B06016476EB1F09115 /* Montserrat-ExtraBold.ttf */,
+				01E66168EE4844E49B957AC0 /* Montserrat-Italic.ttf */,
+				EFD6C2E27BC14C63B8A47094 /* Montserrat-Medium.ttf */,
+				8899A52781E5458EAD2B7094 /* Montserrat-Regular.ttf */,
+				8D7534EA46F74A969EB1C5B1 /* Montserrat-SemiBold.ttf */,
+				E58171A458DB4B408FC42FBC /* NotoSansTamil-Bold.ttf */,
+				AE40158CCA204372AA10C678 /* NotoSansTamil-ExtraBold.ttf */,
+				B399D6CF97D341BE95A81586 /* NotoSansTamil-Medium.ttf */,
+				3C56AD8D8D0049DAA0E02FE6 /* NotoSansTamil-Regular.ttf */,
+				812DF9132EEF4313A6BB2EDF /* NotoSansTamil-SemiBold.ttf */,
+				337DBD31937E4C8EB28F20F0 /* Nunito-Bold.ttf */,
+				0F0754E0ACAB4FADA2784098 /* Nunito-ExtraBold.ttf */,
+				F22E668AD32C418A8F97DB2B /* Nunito-Italic.ttf */,
+				31E7756DAC91491AAA8D8E52 /* Nunito-Medium.ttf */,
+				012BC345649F49839449FB79 /* Nunito-Regular.ttf */,
+				5FCD7C6AD8334D2683C322E5 /* Nunito-SemiBold.ttf */,
+				9E9E766413E74FDC94438FEA /* Roboto-Bold.ttf */,
+				EAB2792B47554DD6A885A340 /* Roboto-ExtraBold.ttf */,
+				C6D73F8DDD854CDE8CCEFE03 /* Roboto-Light.ttf */,
+				FEF0906BCC5444EBB7830678 /* Roboto-Medium.ttf */,
+				9C5BAE5468B24516B2CC297D /* Roboto-Regular.ttf */,
+				4317CF889E3B46C6B3A48BCC /* Roboto-SemiBold.ttf */,
+			);
+			name = Resources;
+			path = "";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -105,13 +183,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "dmk" */;
 			buildPhases = (
-				C38B50BA6285516D6DCD4F65 /* [CP] Check Pods Manifest.lock */,
+				3271E7365A6ADB3411D7F92C /* [CP] Check Pods Manifest.lock */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				00EEFC60759A1932668264C0 /* [CP] Embed Pods Frameworks */,
-				E235C05ADACE081382539298 /* [CP] Copy Pods Resources */,
+				1ABF0CE198231DA247350CF1 /* [CP] Embed Pods Frameworks */,
+				F026BCF1BD7F5FF215CF9B79 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -161,6 +239,29 @@
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				430F0C85A9C45682B33AF12D /* PrivacyInfo.xcprivacy in Resources */,
+				F1EBA907082D4DA2926B969A /* Montserrat-Bold.ttf in Resources */,
+				0C37900FD04747BC842DE591 /* Montserrat-ExtraBold.ttf in Resources */,
+				15A751CF8F1E43AD9F7C00B0 /* Montserrat-Italic.ttf in Resources */,
+				F110B4F211E14F8F965F6A2D /* Montserrat-Medium.ttf in Resources */,
+				31CDA1C51E8C47D7942B2FA4 /* Montserrat-Regular.ttf in Resources */,
+				E0BE2B8B913B40698B10CA7D /* Montserrat-SemiBold.ttf in Resources */,
+				AB569E9A01F64820A83E78D2 /* NotoSansTamil-Bold.ttf in Resources */,
+				B0B70A19FF79493A873BEC3B /* NotoSansTamil-ExtraBold.ttf in Resources */,
+				C77013F505F345FBBCC96A0B /* NotoSansTamil-Medium.ttf in Resources */,
+				59C802A0095A49649626EC23 /* NotoSansTamil-Regular.ttf in Resources */,
+				9E1CB53C8AD14D178495326C /* NotoSansTamil-SemiBold.ttf in Resources */,
+				DE846491C5744BB89024F43E /* Nunito-Bold.ttf in Resources */,
+				B926B7555C8F47E88BB47C4F /* Nunito-ExtraBold.ttf in Resources */,
+				77FFADF78FC1444A805FD1CA /* Nunito-Italic.ttf in Resources */,
+				011ED7D84DF94D75A231C39B /* Nunito-Medium.ttf in Resources */,
+				8AD4A28859F64D0C9DC9ABA7 /* Nunito-Regular.ttf in Resources */,
+				D5A99A62D387444EB99AC73A /* Nunito-SemiBold.ttf in Resources */,
+				3B14FB6F7A314823962F494A /* Roboto-Bold.ttf in Resources */,
+				E1861936646E461397E758B7 /* Roboto-ExtraBold.ttf in Resources */,
+				0D87DC6F4E0641A995C9F100 /* Roboto-Light.ttf in Resources */,
+				494E3718D3924CD68A846411 /* Roboto-Medium.ttf in Resources */,
+				5E8B81278B43407BA6D6F0FD /* Roboto-Regular.ttf in Resources */,
+				FE4030F89BBB4162B1D2BB7D /* Roboto-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,7 +284,7 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"$REACT_NATIVE_PATH/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"$REACT_NATIVE_PATH/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"$WITH_ENVIRONMENT $REACT_NATIVE_XCODE\"\n";
 		};
-		00EEFC60759A1932668264C0 /* [CP] Embed Pods Frameworks */ = {
+		1ABF0CE198231DA247350CF1 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -200,7 +301,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-dmk/Pods-dmk-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C38B50BA6285516D6DCD4F65 /* [CP] Check Pods Manifest.lock */ = {
+		3271E7365A6ADB3411D7F92C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -222,7 +323,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E235C05ADACE081382539298 /* [CP] Copy Pods Resources */ = {
+		F026BCF1BD7F5FF215CF9B79 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -255,7 +356,7 @@
 /* Begin XCBuildConfiguration section */
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B4392A12AC88292D35C810B /* Pods-dmk.debug.xcconfig */;
+			baseConfigurationReference = 844A5A89069116269871A069 /* Pods-dmk.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -283,7 +384,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5709B34CF0A7D63546082F79 /* Pods-dmk.release.xcconfig */;
+			baseConfigurationReference = C53DD10FAA5B1952430898D9 /* Pods-dmk.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
