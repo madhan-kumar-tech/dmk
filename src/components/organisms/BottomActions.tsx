@@ -8,6 +8,7 @@ import { GradientCTAButton } from '../atoms/GradientCTAButton';
 import { SCREEN_NAMES } from '../../constants';
 import { useDMKNavigation } from '../../navigation';
 import MaterialDesignIcons from '@react-native-vector-icons/material-design-icons';
+import DoubleArrowLeftSvg from '../../svg/DoubleArrowLeftSvg';
 
 export type BottomActionsProps = {
   outlineButtonLabel?: string;
@@ -78,11 +79,7 @@ export const BottomActions: React.FC<BottomActionsProps> = ({
             title={footerLabel}
             onPress={handleFooterPress}
             leftIcon={
-              <MaterialDesignIcons
-                name="chevron-double-left"
-                color="#FFFFFF"
-                size={25}
-              />
+              <DoubleArrowLeftSvg width={14} height={14} color="white" />
             }
             disabled={false}
             gradientStyle={{ width: '100%', height: 48, borderRadius: 8 }}

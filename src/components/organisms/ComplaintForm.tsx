@@ -92,7 +92,6 @@ export const ComplaintForm: React.FC<Props> = ({
                 placeholder="தொலைபேசி எண்"
                 maxLength={10}
                 placeholderTextColor="#9AA0A6"
-                underlineColorAndroid="transparent"
               />
             </View>
           </View>
