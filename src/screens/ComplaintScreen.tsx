@@ -29,6 +29,7 @@ import { readFileAsBase64, extFromMime } from '../services/base64';
 import { useDMKNavigation } from '../hooks';
 import { SCREEN_NAMES } from '../constants';
 import { useResendTimer } from '../hooks/useResendTimer';
+import { AppTheme } from '../theme';
 
 export const ComplaintScreen: React.FC = () => {
   const s = useStyles();
@@ -381,7 +382,7 @@ export const ComplaintScreen: React.FC = () => {
             }}
             options={dd4Options}
             placeholder="தேர்ந்தெடுக்கவும்."
-            leftIcon=""
+            leftIcon="vote"
             disabled={!dd3}
             loading={dd4Query.isLoading}
             dropdownZIndex={20}
@@ -416,7 +417,7 @@ export const ComplaintScreen: React.FC = () => {
 };
 
 const useStyles = makeStyles(r => ({
-  root: { flex: 1, backgroundColor: '#F6F7F8' },
+  root: { flex: 1, backgroundColor: AppTheme.colors.background.light },
   scroll: {
     paddingHorizontal: r.responsiveWidth(16),
     paddingTop: 12,

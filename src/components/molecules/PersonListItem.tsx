@@ -44,5 +44,5 @@ const useStyles = makeStyles(() => ({
   } satisfies ViewStyle,
   meta: { marginLeft: 12, flex: 1 } satisfies ViewStyle,
   name: { fontSize: 16, fontWeight: '700', color: '#111' } satisfies TextStyle,
-  sub: { fontSize: 12, color: '#666', marginTop: 2 } satisfies TextStyle,
+  sub: { fontSize: 12, color: '#000000', marginTop: 2 } satisfies TextStyle,
 }));

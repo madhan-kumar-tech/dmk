@@ -32,7 +32,12 @@ export const BarChartCard: React.FC<Props> = ({
   return (
     <View style={styles.card}>
       <GradientBorderCard borderRadius={0}>
-        <AppText variant="small_heading" style={styles.title}>
+        <AppText
+          variant="small_head_desc"
+          style={styles.title}
+          numberOfLines={2}
+          ellipsizeMode="tail"
+        >
           {title}
         </AppText>
 
@@ -51,7 +56,7 @@ export const BarChartCard: React.FC<Props> = ({
               key={i}
               label={it.label}
               color={it.color}
-              textVariant="small_desc"
+              textVariant="small_head_desc"
             />
           ))}
         </View>
@@ -76,6 +81,7 @@ const useStyles = makeStyles(r => ({
   title: {
     textAlign: 'center' as const,
     marginTop: AppTheme.layout.spacing.sm,
+    minHeight: AppTheme.layout.spacing.lg,
     paddingHorizontal: AppTheme.layout.spacing.xs,
   },
   chartContainer: {
@@ -85,6 +91,7 @@ const useStyles = makeStyles(r => ({
   row: {
     flexDirection: 'row' as const,
     marginTop: r.responsiveHeight(4),
+    marginHorizontal: r.responsiveWidth(12),
   },
   ctaButton: {
     marginBottom: AppTheme.layout.spacing.xs - 2,

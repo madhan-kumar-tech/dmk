@@ -11,6 +11,7 @@ import { DetailsCard } from '../molecules/DetailsCard';
 import { PillTabs } from '../molecules/PillTabs';
 import { BottomActions } from '../organisms/BottomActions';
 import { MemberDetailItem } from '../../types';
+import { AppTheme } from '../../theme';
 
 export type Field = { label: string; value?: string | number };
 
@@ -102,7 +103,7 @@ export const UnifiedDetailTemplate: React.FC<UnifiedDetailTemplateProps> = ({
 };
 
 const useStyles = makeStyles(r => ({
-  root: { flex: 1, backgroundColor: '#f6f7f8' },
+  root: { flex: 1, backgroundColor: AppTheme.colors.background.light },
   scroll: { paddingHorizontal: r.responsiveWidth(16), paddingTop: 24 },
   tabWrap: { marginTop: 12 },
   cardWrap: {

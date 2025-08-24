@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, TextInput } from 'react-native';
+import { View, TextInput, StyleSheet, ViewStyle } from 'react-native';
 import { AppText } from '../ui';
 import { makeStyles, vs } from '../../theme/responsive';
 import type { PickedImage } from '../../types/home';
@@ -64,17 +64,39 @@ export const ComplaintForm: React.FC<Props> = ({
           <AppText variant="caption" style={s.fieldTitle}>
             உங்கள் தொலைபேசி எண்
           </AppText>
-          <View>
-            <TextInput
-              style={s.input}
-              keyboardType="phone-pad"
-              value={values.phone}
-              onChangeText={t => onChange({ phone: t })}
-              placeholder="தொலைபேசி எண்"
-              maxLength={10}
+          <View style={s.phoneWrapper}>
+            {/* Inner shadow as the background */}
+            <InnerShadow
+              radius={12}
+              opacity={0.09}
+              thickness={6}
+              style={{ borderRadius: 12 }}
             />
-            <InnerShadow />
+
+            {/* Foreground container absolutely positioned */}
+            <View style={s.phoneField}>
+              <View style={s.phoneFieldInner}>
+                <AppText
+                  style={{ fontWeight: '700', fontSize: 20, color: '#222' }}
+                >
+                  +91
+                </AppText>
+              </View>
+              <TextInput
+                style={s.textInput}
+                keyboardType="number-pad"
+                value={values.phone}
+                onChangeText={t =>
+                  onChange({ phone: t.replace(/[^0-9]/g, '') })
+                }
+                placeholder="தொலைபேசி எண்"
+                maxLength={10}
+                placeholderTextColor="#9AA0A6"
+                underlineColorAndroid="transparent"
+              />
+            </View>
           </View>
+
           {isPhoneVerified && (
             <View style={{ marginTop: 6 }}>
               <PhoneVerifiedBadge />
@@ -107,20 +129,23 @@ export const ComplaintForm: React.FC<Props> = ({
                 value={values.details}
                 onChangeText={t => onChange({ details: t })}
                 placeholder="சுருக்கமாக எழுதவும்…"
+                placeholderTextColor={'#9AA0A6'}
                 multiline
                 numberOfLines={5}
                 textAlignVertical="top"
               />
-              <InnerShadow />
+              <InnerShadow opacity={0.09}/>
             </View>
           </View>
 
-          <AttachmentGrid
-            images={images}
-            onPick={onPickImages}
-            onRemove={onRemoveImage}
-            error={fileError}
-          />
+          <View style={s.field}>
+            <AttachmentGrid
+              images={images}
+              onPick={onPickImages}
+              onRemove={onRemoveImage}
+              error={fileError}
+            />
+          </View>
         </>
       )}
 
@@ -144,7 +169,7 @@ const useStyles = makeStyles(() => ({
     marginBottom: 6,
     fontSize: 16,
   },
-  card: {},
+  card: {marginTop: 12},
   field: { marginBottom: vs(12) },
   input: {
     borderWidth: 1,
@@ -156,4 +181,87 @@ const useStyles = makeStyles(() => ({
     fontSize: 16,
   },
   multiline: { height: 140 },
+  phoneWrapper: {
+    position: 'relative' as const,
+    height: 48,
+    borderRadius: 12,
+    marginBottom: 12,
+  },
+  phoneShadow: {
+    borderRadius: 12,
+  },
+  phoneContainer: {
+    flexDirection: 'row' as const,
+    alignItems: 'center' as const,
+    borderRadius: 12,
+    overflow: 'hidden' as const,
+    borderWidth: 1,
+    borderColor: '#E1E4E8',
+    height: 48,
+    backgroundColor: '#fff',
+  },
+  phoneCode: {
+    width: 64,
+    alignItems: 'center' as const,
+    justifyContent: 'center' as const,
+    borderRightWidth: 1,
+    borderRightColor: '#E1E4E8',
+    backgroundColor: '#fff',
+    height: 48,
+    borderTopLeftRadius: 12,
+    borderBottomLeftRadius: 12,
+  },
+  phoneCodeText: {
+    fontWeight: '700' as const,
+    fontSize: 20,
+    color: '#222',
+  },
+  phoneInput: {
+    flex: 1,
+    paddingHorizontal: 12,
+    paddingVertical: 0,
+    height: 48,
+    backgroundColor: '#fff',
+    borderTopRightRadius: 12,
+    borderBottomRightRadius: 12,
+    fontFamily: 'Roboto-Regular',
+    fontSize: 18,
+  },
+  phoneField: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    borderRadius: 12,
+    overflow: 'hidden',
+    borderWidth: 1,
+    borderColor: '#E1E4E8',
+    height: 48,
+    backgroundColor: 'transparent', // transparent so shadow is visible
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+  } as ViewStyle,
+  phoneFieldInner: {
+    width: 64,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRightWidth: 1,
+    borderRightColor: '#E1E4E8',
+    backgroundColor: 'transparent',
+    height: 48,
+    borderTopLeftRadius: 12,
+    borderBottomLeftRadius: 12,
+  } as ViewStyle,
+  textInput: {
+    flex: 1,
+    paddingHorizontal: 12,
+    paddingVertical: 0,
+    height: 48,
+    backgroundColor: 'transparent',
+    borderTopRightRadius: 12,
+    borderBottomRightRadius: 12,
+    fontFamily: 'Roboto-Regular',
+    fontSize: 18,
+  },
 }));

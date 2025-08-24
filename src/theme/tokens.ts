@@ -16,6 +16,9 @@ export const DesignTokens = {
       primary: '#ffffff',
       secondary: '#eeeeee',
       dark: '#1e1f21',
+      light: '#F9FAFB',
+      base: '#FFF9F9',
+      whiteLight: '#FDFDFD',
     },
 
     surface: '#ffffff',

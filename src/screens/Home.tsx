@@ -153,7 +153,7 @@ const useStyles = makeStyles(r => ({
     marginHorizontal: hs(11),
   } satisfies ViewStyle,
 
-  root: { flex: 1, backgroundColor: '#F6F7F8' },
+  root: { flex: 1, backgroundColor: AppTheme.colors.background.base },
   center: { flex: 1, alignItems: 'center', justifyContent: 'center' },
   retry: { marginTop: 8, color: '#2563EB' },
 
