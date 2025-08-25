@@ -128,17 +128,35 @@ export const SelectField: React.FC<Props> = ({
           renderLeftIcon={() => {
             const iconColor = isDisabled ? '#e4e4e4' : '#9AA0A6';
             if (leftIcon === 'home-city-outline') {
-              return <View style={{ marginRight: 8 }}><HomeBuildingSvg width={22} height={22} color={iconColor} /></View>;
+              return (
+                <View style={{ marginRight: 8 }}>
+                  <HomeBuildingSvg width={22} height={22} color={iconColor} />
+                </View>
+              );
             }
             if (leftIcon === 'map-marker-radius-outline') {
-              return <View style={{ marginRight: 8 }}><LocationSvg width={22} height={22} color={iconColor} /></View>;
+              return (
+                <View style={{ marginRight: 8 }}>
+                  <LocationSvg width={22} height={22} color={iconColor} />
+                </View>
+              );
             }
             if (leftIcon === 'vote') {
-              return <View style={{ marginRight: 8 }}><VoteSvg width={22} height={22} color={iconColor} /></View>;
+              return (
+                <View style={{ marginRight: 8 }}>
+                  <VoteSvg width={22} height={22} color={iconColor} />
+                </View>
+              );
             }
             return null;
           }}
-          renderRightIcon={() => <ChevronDownSvg width={18} height={10} color={ !isDisabled ? '#9AA0A6' : '#e4e4e4'} />}
+          renderRightIcon={() => (
+            <ChevronDownSvg
+              width={18}
+              height={10}
+              color={!isDisabled ? '#9AA0A6' : '#e4e4e4'}
+            />
+          )}
           renderItem={item => {
             const active = item.value === value;
             return (
@@ -154,7 +172,11 @@ export const SelectField: React.FC<Props> = ({
             );
           }}
         />
-        <InnerShadow style={{ borderRadius: 12 }} opacity={!isDisabled ? 0.04 : 0} thickness={!isDisabled ? 6 : 0} />
+        <InnerShadow
+          style={{ borderRadius: 12 }}
+          opacity={!isDisabled ? 0.04 : 0}
+          thickness={!isDisabled ? 6 : 0}
+        />
         {inset && <InnerShadow />}
       </View>
 
@@ -168,8 +190,10 @@ export const SelectField: React.FC<Props> = ({
 };
 
 const useStyles = makeStyles(() => ({
-  container: { marginVertical: 12} as ViewStyle,
-  label: { opacity: 0.9, marginBottom: 6, fontSize: 16 , color: '#1F1F1F'} as TextStyle,
+  container: { marginVertical: 12 } as ViewStyle,
+
+  label: { opacity: 0.9, marginBottom: 6, color: '#1F1F1F' } as TextStyle,
+
   field: {
     minHeight: 48,
     borderRadius: 12,
@@ -219,7 +243,7 @@ const useStyles = makeStyles(() => ({
     marginRight: 8,
   } as ViewStyle,
   iconStyle: { width: 0, height: 0 } as ImageStyle,
-  placeholderDisable:{
+  placeholderDisable: {
     color: '#e4e4e4',
   },
   placeholder: {

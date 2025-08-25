@@ -77,7 +77,6 @@ const useStyles = makeStyles(() => ({
   } satisfies ImageStyle,
   title: {
     color: AppTheme.colors.primary,
-    fontSize: 13,
     textAlign: 'center',
   } satisfies TextStyle,
 }));
