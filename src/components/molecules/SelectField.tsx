@@ -11,11 +11,11 @@ import { Dropdown } from 'react-native-element-dropdown';
 import { makeStyles } from '../../theme/responsive';
 import { AppText } from '../ui';
 import { InnerShadow } from '../../../ui/atoms/InnerShadow';
-import MaterialDesignIcons from '@react-native-vector-icons/material-design-icons';
 import HomeBuildingSvg from '../../svg/HomeBuildingSvg';
 import ChevronDownSvg from '../../svg/ArrowDownSvg';
 import LocationSvg from '../../svg/locationSvg';
 import VoteSvg from '../../svg/VoteSvg';
+import { AppTheme } from '../../theme';
 
 export type SelectOption = {
   value: string | number;
@@ -244,9 +244,11 @@ const useStyles = makeStyles(() => ({
   } as ViewStyle,
   iconStyle: { width: 0, height: 0 } as ImageStyle,
   placeholderDisable: {
+    fontSize: AppTheme.typography.fontSizes.caption,
     color: '#e4e4e4',
   },
   placeholder: {
+    fontSize: AppTheme.typography.fontSizes.caption,
     color: '#9AA0A6',
     opacity: 0.6,
   } as TextStyle,
