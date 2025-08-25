@@ -11,7 +11,6 @@ import { ApiUiType } from '../../types/ui';
 import { AppTheme } from '../../theme';
 import ArrowRightIcon from '../../svg/RightArrowSvg';
 
-
 export interface OptionItem {
   value: number | string;
   label: string;
@@ -61,7 +60,9 @@ export const TwoOptionListTemplate: React.FC<Props> = ({
               }}
             >
               <Card style={s.item}>
-                <Text style={s.optionText}>{item.label}</Text>
+                <AppText style={s.optionText} variant="t_caption">
+                  {item.label}
+                </AppText>
                 <ArrowRightIcon width={18} height={18} color="black" />
               </Card>
             </TouchableOpacity>
@@ -85,6 +86,6 @@ const useStyles = makeStyles(() => ({
     justifyContent: 'space-between',
   } satisfies ViewStyle,
   optionText: {
-    fontSize: 16,
+    color: '#000000',
   } satisfies TextStyle,
 }));
