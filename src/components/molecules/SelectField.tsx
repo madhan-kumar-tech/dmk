@@ -129,21 +129,21 @@ export const SelectField: React.FC<Props> = ({
             const iconColor = isDisabled ? '#e4e4e4' : '#9AA0A6';
             if (leftIcon === 'home-city-outline') {
               return (
-                <View style={{ marginRight: 8 }}>
+                <View style={{ marginRight: 20 }}>
                   <HomeBuildingSvg width={22} height={22} color={iconColor} />
                 </View>
               );
             }
             if (leftIcon === 'map-marker-radius-outline') {
               return (
-                <View style={{ marginRight: 8 }}>
+                <View style={{ marginRight: 20 }}>
                   <LocationSvg width={22} height={22} color={iconColor} />
                 </View>
               );
             }
             if (leftIcon === 'vote') {
               return (
-                <View style={{ marginRight: 8 }}>
+                <View style={{ marginRight: 20 }}>
                   <VoteSvg width={22} height={22} color={iconColor} />
                 </View>
               );
@@ -153,7 +153,7 @@ export const SelectField: React.FC<Props> = ({
           renderRightIcon={() => (
             <ChevronDownSvg
               width={18}
-              height={10}
+              height={18}
               color={!isDisabled ? '#9AA0A6' : '#e4e4e4'}
             />
           )}
