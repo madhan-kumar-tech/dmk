@@ -187,11 +187,6 @@ const useStyles = makeStyles(r => ({
     justifyContent: 'center',
     alignItems: 'center',
   } satisfies ViewStyle,
-  cgTitle: {
-    color: AppTheme.colors.primary,
-    fontSize: 13,
-    textAlign: 'center',
-  } satisfies TextStyle,
   cgContainer: {
     flexDirection: 'row',
     flexWrap: 'wrap',

@@ -331,7 +331,7 @@ export const ComplaintScreen: React.FC = () => {
         contentContainerStyle={s.scroll}
         keyboardShouldPersistTaps="handled"
       >
-        <AppText variant="t_header" style={{ marginBottom: 12 }}>
+        <AppText variant="t_header" style={{ marginBottom: 12 , marginTop: 14}}>
           புகார்கள்
         </AppText>
 

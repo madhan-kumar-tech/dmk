@@ -103,7 +103,6 @@ const useStyles = makeStyles(
         borderColor: '#ADADAD',
         borderRadius: 10,
         borderStyle: 'dashed',
-        padding: 20,
         backgroundColor: '#fff',
         marginBottom: 12,
       },

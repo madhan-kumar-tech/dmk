@@ -77,7 +77,7 @@ export const ComplaintForm: React.FC<Props> = ({
             <View style={s.phoneField}>
               <View style={s.phoneFieldInner}>
                 <AppText
-                  style={{ fontWeight: '700', fontSize: 20, color: '#222' }}
+                  style={{ fontWeight: '700', fontSize: 16, color: '#222' }}
                 >
                   +91
                 </AppText>
@@ -166,7 +166,6 @@ const useStyles = makeStyles(() => ({
   fieldTitle: {
     opacity: 0.9,
     marginBottom: 6,
-    fontSize: 16,
   },
   card: { marginTop: 12 },
   field: { marginBottom: vs(12) },
@@ -177,7 +176,6 @@ const useStyles = makeStyles(() => ({
     paddingHorizontal: 12,
     paddingVertical: 10,
     backgroundColor: '#fff',
-    fontSize: 16,
     // Ensure no underline on Android
     textDecorationLine: 'none' as const,
   },
@@ -190,46 +188,6 @@ const useStyles = makeStyles(() => ({
     height: 48,
     borderRadius: 12,
     marginBottom: 12,
-  },
-  phoneShadow: {
-    borderRadius: 12,
-  },
-  phoneContainer: {
-    flexDirection: 'row' as const,
-    alignItems: 'center' as const,
-    borderRadius: 12,
-    overflow: 'hidden' as const,
-    borderWidth: 1,
-    borderColor: '#E1E4E8',
-    height: 48,
-    backgroundColor: '#fff',
-  },
-  phoneCode: {
-    width: 64,
-    alignItems: 'center' as const,
-    justifyContent: 'center' as const,
-    borderRightWidth: 1,
-    borderRightColor: '#E1E4E8',
-    backgroundColor: '#fff',
-    height: 48,
-    borderTopLeftRadius: 12,
-    borderBottomLeftRadius: 12,
-  },
-  phoneCodeText: {
-    fontWeight: '700' as const,
-    fontSize: 20,
-    color: '#222',
-  },
-  phoneInput: {
-    flex: 1,
-    paddingHorizontal: 12,
-    paddingVertical: 0,
-    height: 48,
-    backgroundColor: '#fff',
-    borderTopRightRadius: 12,
-    borderBottomRightRadius: 12,
-    fontFamily: 'Roboto-Regular',
-    fontSize: 18,
   },
   phoneField: {
     flexDirection: 'row',
@@ -266,7 +224,6 @@ const useStyles = makeStyles(() => ({
     borderTopRightRadius: 12,
     borderBottomRightRadius: 12,
     fontFamily: 'Roboto-Regular',
-    fontSize: 18,
     textDecorationLine: 'none',
   } as TextStyle,
 }));
