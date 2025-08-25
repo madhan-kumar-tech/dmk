@@ -255,6 +255,7 @@ const useStyles = makeStyles(() => ({
   selectedText: {
     color: '#1F1F1F',
     opacity: 0.6,
+    fontSize: AppTheme.typography.fontSizes.caption,
   } as TextStyle,
   itemText: {} as TextStyle,
   inputSearch: {
