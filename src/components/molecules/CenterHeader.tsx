@@ -24,7 +24,7 @@ export const CenterHeader: React.FC<CenterHeaderProps> = ({
 
   return (
     <View style={[s.center, { paddingTop: insets.top ? 0 : vs(8) }]}>
-      <Avatar uri={avatar} size={92} />
+      <Avatar uri={avatar} size={75} />
 
       <AppText
         variant="t_header"

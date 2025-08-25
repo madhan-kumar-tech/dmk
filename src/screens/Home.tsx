@@ -157,7 +157,7 @@ const useStyles = makeStyles(r => ({
   center: { flex: 1, alignItems: 'center', justifyContent: 'center' },
   retry: { marginTop: 8, color: '#2563EB' },
 
-  bg: { width: '100%', height: 150, justifyContent: 'flex-end' } as ViewStyle,
+  bg: { width: '100%', height: 144, justifyContent: 'flex-end' } as ViewStyle,
   bgImg: { width: '100%', resizeMode: 'cover' } as ImageStyle,
   headerPad: { paddingHorizontal: hs(16), paddingTop: vs(12) },
   hero: { width: '100%', height: 200, resizeMode: 'contain' } as ImageStyle,

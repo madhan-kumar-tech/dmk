@@ -92,7 +92,7 @@ export const UnifiedDetailTemplate: React.FC<UnifiedDetailTemplateProps> = ({
             <DetailsCard details={details} labelWidth={labelWidth} />
           </View>
         ) : hasVotersTab && tab === 'voters' ? (
-          <DetailsCard details={countDetails} labelWidth={120} />
+          <DetailsCard details={countDetails} labelWidth={labelWidth} />
         ) : null}
       </ScrollView>
 

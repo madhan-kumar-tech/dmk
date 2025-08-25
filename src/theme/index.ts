@@ -15,8 +15,14 @@ export const AppTheme = {
     },
     h2: {
       fontFamily: resolveFont('headings', 'semibold'),
-      fontSize: typography.fontSizes.body + 2,
+      fontSize: typography.fontSizes.body,
       lineHeight: Math.round((typography.fontSizes.body + 2) * 1.3),
+      color: DesignTokens.colors.text.primary,
+    },
+    h3_semi_bold: {
+      fontFamily: resolveFont('headings', 'bold'),
+      fontSize: typography.fontSizes.header,
+      lineHeight: Math.round((typography.fontSizes.header) * 1.3),
       color: DesignTokens.colors.text.primary,
     },
     small_heading: {

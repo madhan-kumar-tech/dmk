@@ -57,7 +57,6 @@ const useStyles = makeStyles(() => ({
   label: {} as ViewStyle,
 
   sep: {
-    width: 12,
     textAlign: 'center',
     marginTop: 1,
   } satisfies TextStyle,

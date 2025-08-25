@@ -47,7 +47,7 @@ export const DetailsCard: React.FC<DetailsCardProps> = ({
 
 const useStyles = makeStyles(r => ({
   card: {
-    marginTop: r.responsiveHeight(24),
+    marginTop: r.responsiveHeight(16),
     paddingHorizontal: r.responsiveWidth(16),
   } as ViewStyle,
 }));

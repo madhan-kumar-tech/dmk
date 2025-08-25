@@ -26,7 +26,7 @@ export const GaugeCard: React.FC<Props> = ({
   return (
     <View style={styles.card}>
       <GradientBorderCard borderRadius={0}>
-        <AppText variant="h1" style={styles.title}>
+        <AppText variant="h3_semi_bold" style={styles.title}>
           {title}
         </AppText>
 
