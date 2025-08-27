@@ -1,6 +1,6 @@
 import React from 'react';
 import { Image, View } from 'react-native';
-import Svg, { Circle, Defs, LinearGradient, Stop } from 'react-native-svg';
+import Svg, { Rect, Defs, LinearGradient, Stop } from 'react-native-svg';
 import { IMAGES } from '../../assets';
 
 type Props = {
@@ -14,7 +14,7 @@ type Props = {
 
 export const Avatar: React.FC<Props> = ({
   uri,
-  size = 56,
+  size = 60,
   ring = true,
   ringWidth = 4,
   topColor = '#000000',
@@ -22,9 +22,8 @@ export const Avatar: React.FC<Props> = ({
 }) => {
   // total canvas must include the ring outside the image
   const box = size + ringWidth * 2;
-  const c = box / 2;
-  // radius so the ring sits outside the image edge
-  const r = size / 2 + (ring ? ringWidth / 2 : 0);
+  const squareSize = size + ringWidth;
+  const squarePosition = ringWidth / 2;
 
   return (
     <View
@@ -36,9 +35,12 @@ export const Avatar: React.FC<Props> = ({
       }}
     >
       {ring && (
-        <Svg width={box} height={box} style={{ position: 'absolute', pointerEvents: 'none' }}>
+        <Svg
+          width={box}
+          height={box}
+          style={{ position: 'absolute', pointerEvents: 'none' }}
+        >
           <Defs>
-            {/* Hard split at 50%: top half = black, bottom half = red */}
             <LinearGradient
               id="halfStroke"
               x1="0"
@@ -54,10 +56,11 @@ export const Avatar: React.FC<Props> = ({
             </LinearGradient>
           </Defs>
 
-          <Circle
-            cx={c}
-            cy={c}
-            r={r}
+          <Rect
+            x={squarePosition}
+            y={squarePosition}
+            width={squareSize}
+            height={squareSize}
             fill="none"
             stroke="url(#halfStroke)"
             strokeWidth={ringWidth}
@@ -67,7 +70,7 @@ export const Avatar: React.FC<Props> = ({
 
       <Image
         source={uri ? { uri } : IMAGES.headerLogo}
-        style={{ width: size, height: size, borderRadius: size / 2 }}
+        style={{ width: size, height: size, resizeMode: 'stretch' }}
       />
     </View>
   );
