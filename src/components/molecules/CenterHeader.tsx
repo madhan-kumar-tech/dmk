@@ -43,7 +43,7 @@ export const CenterHeader: React.FC<CenterHeaderProps> = ({
 
       {!!role && (
         <GradientText
-          style={{ marginBottom: vs(12) }}
+          style={{ marginBottom: vs(12), textAlign: 'center' }}
           textVariant="t_header_1"
           text={role}
           start={{ x: 0.5, y: 0 }}

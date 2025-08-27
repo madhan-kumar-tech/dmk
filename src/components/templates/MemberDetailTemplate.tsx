@@ -71,7 +71,6 @@ export const UnifiedDetailTemplate: React.FC<UnifiedDetailTemplateProps> = ({
         contentInsetAdjustmentBehavior="never"
         automaticallyAdjustContentInsets={false}
       >
-        {}
         <CenterHeader
           avatar={avatar}
           name={title}
@@ -79,14 +78,12 @@ export const UnifiedDetailTemplate: React.FC<UnifiedDetailTemplateProps> = ({
           subInfo={subInfo}
         />
 
-        {}
         {hasTabs && hasVotersTab && (
           <View style={s.tabWrap}>
             <PillTabs tabs={tabs!} value={tab} onChange={setTab} />
           </View>
         )}
 
-        {}
         {!hasTabs || tab === 'about' ? (
           <View style={[s.cardWrap, cardStyle]}>
             <DetailsCard details={details} labelWidth={labelWidth} />
@@ -96,7 +93,6 @@ export const UnifiedDetailTemplate: React.FC<UnifiedDetailTemplateProps> = ({
         ) : null}
       </ScrollView>
 
-      {}
       <BottomActions />
     </SafeAreaView>
   );

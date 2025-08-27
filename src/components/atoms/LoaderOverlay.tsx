@@ -107,7 +107,6 @@ export const LoaderOverlay: React.FC<LoaderProps> = ({
         accessibilityLabel={accessibilityLabel}
         testID={testID}
       >
-        {}
         <Animated.View
           style={[
             styles.circle,
@@ -122,7 +121,6 @@ export const LoaderOverlay: React.FC<LoaderProps> = ({
           ]}
         />
 
-        {}
         {gifSource ? (
           FastImageModule ? (
             <FastImageModule

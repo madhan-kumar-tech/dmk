@@ -148,7 +148,6 @@ export const ComplaintForm: React.FC<Props> = ({
         </>
       )}
 
-      {}
       {(showPhone || showOtp || showForm) && (
         <View style={{ alignItems: 'flex-end', marginTop: 10 }}>
           <InlineButton

@@ -62,10 +62,8 @@ export const PillTabs: React.FC<Props> = ({
 
   return (
     <View onLayout={onLayout}>
-      {}
       <View style={[s.shellShadow, { height, borderRadius: radius + 2 }]} />
 
-      {}
       <View
         style={[s.shell, { height, borderRadius: radius + 2, padding: inset }]}
         pointerEvents="box-none"
@@ -77,7 +75,6 @@ export const PillTabs: React.FC<Props> = ({
           style={{ ...s.shellBg, borderRadius: radius + 2 }}
         />
 
-        {}
         {segW > 0 && (
           <Animated.View
             style={[
@@ -93,7 +90,6 @@ export const PillTabs: React.FC<Props> = ({
           >
             <View style={s.thumbShadow} />
             <View style={s.thumbClip}>
-              {}
               <LinearGradient
                 colors={['#000000', '#FF0202']}
                 start={{ x: 0.5, y: 0 }}
@@ -116,7 +112,6 @@ export const PillTabs: React.FC<Props> = ({
           </Animated.View>
         )}
 
-        {}
         <LabelsRow
           tabs={tabs}
           height={height}
@@ -165,7 +160,6 @@ const LabelsRow = React.memo(
               onPress={() => onChange(t.key)}
               style={[s.item, { height, width: segW || undefined }]}
             >
-              {}
               <Animated.Text
                 numberOfLines={1}
                 style={[s.lblInactive, { opacity: inactiveOpacity }]}
@@ -173,7 +167,6 @@ const LabelsRow = React.memo(
                 {t.label}
               </Animated.Text>
 
-              {}
               <Animated.Text
                 numberOfLines={1}
                 style={[s.lblActive, { opacity: activeOpacity }]}

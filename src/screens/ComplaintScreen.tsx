@@ -335,7 +335,6 @@ export const ComplaintScreen: React.FC = () => {
           புகார்கள்
         </AppText>
 
-        {}
         <FormSectionCard>
           <SelectField
             label="உங்கள் பேருராட்சி/ஊராட்சி"
@@ -389,7 +388,6 @@ export const ComplaintScreen: React.FC = () => {
           />
         </FormSectionCard>
 
-        {}
         {!showSuccess && selectionsReady && (
           <ComplaintForm
             values={values}

@@ -19,7 +19,7 @@ export const DetailRow: React.FC<DetailRowProps> = ({
   const s = useStyles();
   return (
     <View style={[s.row, style]}>
-      {}
+      
       <AppText
         variant="t_header_medium"
         style={[s.label, { width: labelWidth }]}
@@ -27,12 +27,10 @@ export const DetailRow: React.FC<DetailRowProps> = ({
         {label}
       </AppText>
 
-      {}
       <AppText variant="t_header_medium" style={s.sep}>
         :
       </AppText>
 
-      {}
       <View style={s.valueCol}>
         <AppText
           variant="t_body"

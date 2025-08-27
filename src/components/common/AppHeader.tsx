@@ -28,7 +28,7 @@ export const AppHeader: React.FC<Props> = ({
         <GradientText text={title} style={styles.title} />
       </View>
 
-      {}
+      
       <View style={styles.divider} />
     </View>
   );

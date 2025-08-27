@@ -42,7 +42,6 @@ export const BarChartCard: React.FC<Props> = ({
         </AppText>
 
         <View style={styles.chartContainer}>
-          {}
           <BarChart
             values={values}
             maxValue={maxWithBuffer}

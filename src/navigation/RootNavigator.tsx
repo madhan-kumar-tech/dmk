@@ -20,8 +20,6 @@ export const RootNavigator: React.FC = () => {
       >
         <Stack.Screen name={SCREEN_NAMES.MAIN} component={MainNavigator} />
 
-        {}
-        {}
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -87,7 +87,7 @@ const HomeScreen: React.FC = () => {
                     style={styles.hero}
                     resizeMethod="resize"
                   />
-                  <GaugeCard {...gauge} />
+                  {isLoading ? null : <GaugeCard {...gauge} />}
                   <View pointerEvents="none">
                     <BarChartMain barChartData={barChart} />
                   </View>

@@ -23,8 +23,6 @@ export const GaugeCard: React.FC<Props> = ({
 }) => {
   const styles = useStyles();
 
-  const totalNumber = total ? Number(total) : 0;
-
   return (
     <View style={styles.card}>
       <GradientBorderCard borderRadius={0}>
@@ -33,7 +31,7 @@ export const GaugeCard: React.FC<Props> = ({
         </AppText>
 
         <View style={styles.gaugeContainer}>
-          <GaugeMeter value={totalNumber} />
+          <GaugeMeter value={total as number} />
         </View>
 
         <View style={styles.row}>
