@@ -87,5 +87,6 @@ const useStyles = makeStyles(() => ({
   } satisfies ViewStyle,
   optionText: {
     color: '#000000',
+    flex: 1,
   } satisfies TextStyle,
 }));
